@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+//yeh main page hai jo first render hota hai
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
