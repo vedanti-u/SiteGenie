@@ -1,7 +1,10 @@
 
 const Footer = () => {
   return (
-    <div/>
+
+    <div>
+      <h1>Copyright BAIGUN 2023</h1>
+    </div>
   );
 };
 
