@@ -1,7 +1,8 @@
 
 //import Image from 'next/image'
 
-import Chatbot from "./components/chatbot";
+//import Chatbot from "./chatbot/chatbot";
+import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 
 //yeh main page hai jo first render hota hai
@@ -10,9 +11,10 @@ import Navbar from "./components/navbar";
 export default function Home() {
   return (
   <>
-     <Navbar />
+    <Navbar />
     <h1>Home page </h1>
-    <Chatbot />
+    <Footer/>
+
    
   </>
   )
