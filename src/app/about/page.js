@@ -1,6 +1,8 @@
+import '../style/globals.css'
+
 const About = () => {
     return (  
-        <h1>We have enetered into about page </h1>
+        <h1>About </h1>
     );
 }
  

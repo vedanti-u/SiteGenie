@@ -13,7 +13,7 @@ const Chatbot = () => {
       {/*chatbot body div*/}
 
       <div className="inline-flex items-center">
-        <img src="src\app\Screenshot 2023-11-06 134106.png" alt="img" className="w-8" />
+        <img src="./chatbot/Screenshot 2023-11-06 134106.png" alt="img" className="w-8" />
         <span className="ml-4">SiteGinnie.AI</span>
       </div>
 
