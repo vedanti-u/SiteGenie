@@ -16,6 +16,17 @@ export default function Chatbot() {
     setInputValue("");
   };
 
+  const sendMessage = {message} => {
+    const url ='';
+    const headers = {
+      
+    }
+    const data = {
+      
+    }
+
+    setIsLoading(true);
+  }
   useEffect(() => {}, []);
 
   return (
@@ -67,6 +78,12 @@ export default function Chatbot() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        <iframe>
+
+        </iframe>
       </div>
     </>
   );
