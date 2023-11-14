@@ -1,32 +1,56 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "../style/globals.css";
+import axios from "axios";
 
-export default function Chatbot() {
+const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (event) => {
+    console.log("inside handlesubmit");
+
     event.preventDefault();
+
+    console.log("inside handlesubmit-1");
+
     setChatLog((prevChatLog) => [
       ...prevChatLog,
       { type: "user", message: inputValue },
     ]);
+
+    console.log("after setchatlog");
+
     setInputValue("");
   };
 
-  const sendMessage = {message} => {
-    const url ='';
-    const headers = {
-      
-    }
+  const sendMessage = (message) => {
+    const url = "";
+
     const data = {
-      
-    }
+      model: "",
+      messages: [{ role: "user", content: message }],
+    };
 
     setIsLoading(true);
-  }
+
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log(response);
+        setChatLog((prevChatLog) => [
+          ...prevChatLog,
+          { type: "bot", message: response.data.choices[0].message.content },
+        ]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
+  };
+
   useEffect(() => {}, []);
 
   return (
@@ -35,15 +59,13 @@ export default function Chatbot() {
         <div className="bg-white shadow-lg rounded-lg max-w-md">
           <div className="border-b-2 px-2 py-4">
             <div className="sm:bg-blue-900 rounded-lg">
-              <div className="inline-flex items-center">
-                <span className="text-white ml-8">
+              <div className="flex justify-center items-center">
+                <h1 className="text-white text-1xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                   <b>SiteGinnie.AI</b>
-                </span>
+                </h1>
               </div>
             </div>
-            {chatLog.map((message, index) => (
-              <div key={index}>{message.message}</div>
-            ))}
+
             <div className="h-80 flex flex-col space-y-4 max-w-md px-2 mb-2 mt-2">
               <div className="flex-col items-start">
                 <span className="bg-blue-500 px-4 py-2 text-white rounded-b-xl rounded-tl-xl mb-2 mt-2">
@@ -52,6 +74,11 @@ export default function Chatbot() {
               </div>
 
               <div className="flex flex-col items-end">
+                <span className="bg-gray-500 px-4 py-2 text-white mt-2 mb-2 rounded-b-xl rounded-tr-xl">
+                  {chatLog.map((message, index) => (
+                    <div key={index}>{message.message}</div>
+                  ))}
+                </span>
                 <span className="bg-gray-500 px-4 py-2 text-white mt-2 mb-2 rounded-b-xl rounded-tr-xl">
                   {inputValue}
                 </span>
@@ -81,10 +108,9 @@ export default function Chatbot() {
       </div>
 
       <div>
-        <iframe>
-
-        </iframe>
+        <iframe></iframe>
       </div>
     </>
   );
-}
+};
+export default Chatbot;
