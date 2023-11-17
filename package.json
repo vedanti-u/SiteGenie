@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "build:css": "postcss styles -o public/build/tailwind.css",
     "axios": "^1.6.1",
     "next": "14.0.1",
+    "postcss-cli": "^10.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -23,3 +25,6 @@
     "tailwindcss": "^1.9.6"
   }
 }
+
+
+
