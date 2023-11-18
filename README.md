@@ -8,7 +8,7 @@ this repo contains all the code of frontend
 ## Getting Started
 *To get started, just clone the repository *
 
-    $ git clone https://github.com/vedanti-u/site-backend.git
+    $ git clone https://github.com/vedanti-u/site-frontend.git
 
 
 ### Install yarn
