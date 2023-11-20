@@ -1,11 +1,9 @@
 "use client";
 
-//import Link from "next/link";
-//import create from './create/page';
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-
+import "../style/globals.css";
 const Home = () => {
   const [plusButtonClickCount, setPlusButtonClickCount] = useState(0);
 
@@ -46,7 +44,7 @@ const Home = () => {
           </div>
 
           <a
-            href="../prof"
+            href="../chatbot-info"
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full ml-4 focus:outline-none focus:shadow-outline"
             onClick={handlePlusButtonClick}
           >

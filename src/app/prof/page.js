@@ -1,3 +1,4 @@
+import "../style/globals.css";
 const create = () => {
   return (
     <>

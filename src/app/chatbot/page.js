@@ -3,6 +3,16 @@ import React, { useState, useEffect } from "react";
 import "../style/globals.css";
 import axios from "axios";
 
+var requestOptions = {
+  method: "GET",
+  redirect: "follow",
+};
+
+fetch("http://localhost:3000/chatbotprompt", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.log("error", error));
+
 const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -76,7 +86,9 @@ const Chatbot = () => {
               <div className="flex flex-col items-end">
                 <span className="bg-gray-500 px-4 py-2 text-white mt-2 mb-2 rounded-b-xl rounded-tr-xl">
                   {chatLog.map((message, index) => (
-                    <div key={index}>{message.message}</div>
+                    <div key={index} className="">
+                      {message.message}
+                    </div>
                   ))}
                 </span>
                 <span className="bg-gray-500 px-4 py-2 text-white mt-2 mb-2 rounded-b-xl rounded-tr-xl">
