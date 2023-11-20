@@ -1,3 +1,9 @@
+
+import Footer from "./components/footer";
+import Landing from "./components/landing";
+//import Navbar from "./components/navbar";
+import "./style/globals.css";
+
 //import Image from 'next/image'
 
 //import Chatbot from "./chatbot/chatbot";
@@ -10,6 +16,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
+
+      <Landing />
+      <Footer />
+
       {/* <Navbar /> */}
       {/* <h1>Home page </h1> */}
       <div className="relative bg-gray-900 text-white">
@@ -87,7 +97,6 @@ export default function Home() {
         </main>
       </div>
 
-      {/* <Footer /> */}
     </>
   );
 }
