@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^1.0.0",
+    "geist": "^1.1.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18"
