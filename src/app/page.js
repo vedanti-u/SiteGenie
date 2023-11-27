@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+
+import Footer from "./components/footer";
+import Landing from "./components/landing";
+//import Navbar from "./components/navbar";
+import "./style/globals.css";
+
+//import Image from 'next/image'
+
+//import Chatbot from "./chatbot/chatbot";
+import Footer from "./components/footer";
+import Navbar from "./components/navbar";
+>>>>>>> b573a878be4b0d88d7fb7beef3c6ccaf0ae863e8
 import Link from "next/link";
 import Image from 'next/image';
 // import { GeistSans } from 'geist/font/sans';
@@ -5,6 +19,7 @@ import './style/globals.css'
 
 export default function Example() {
   return (
+<<<<<<< HEAD
     <div className="relative mx-5">
       <nav className="bg-white-800 p-4 flex items-center justify-between shadow-md z-10">
         <div className="flex-shrink-0">
@@ -14,6 +29,24 @@ export default function Example() {
             className="h-20 w-20"
           /> */}
         </div>
+=======
+    <>
+
+      <Landing />
+      <Footer />
+
+      {/* <Navbar /> */}
+      {/* <h1>Home page </h1> */}
+      <div className="relative bg-gray-900 text-white">
+        <nav className="bg-gray-800 p-4 flex items-center justify-between">
+          <div className="flex-shrink-0">
+            <img
+              src="Logo daal dena"
+              alt="Logo daal dena"
+              className="h-8 w-8"
+            />
+          </div>
+>>>>>>> b573a878be4b0d88d7fb7beef3c6ccaf0ae863e8
 
         <div className="hidden md:flex space-x-4">
          
@@ -182,6 +215,11 @@ export default function Example() {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
+=======
+
+    </>
+>>>>>>> b573a878be4b0d88d7fb7beef3c6ccaf0ae863e8
   );
 }
