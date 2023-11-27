@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 // import { GeistSans } from 'geist/font/sans';
+import './style/globals.css'
 
 export default function Example() {
   return (
