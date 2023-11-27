@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { GeistSans } from "geist/font/sans";
 
 const navigation = {
@@ -123,3 +124,14 @@ export default function Footer() {
     </footer>
   )
 }
+=======
+const Footer = () => {
+  return (
+    <div>
+      <h1>Copyright @BAIGUN 2023</h1>
+    </div>
+  );
+};
+
+export default Footer;
+>>>>>>> 0d564a31e1d28d73a87c6a0c703d45857cef60fd

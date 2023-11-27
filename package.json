@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+<<<<<<< HEAD
     "@heroicons/react": "^1.0.0",
     "@supabase/auth-ui-react": "^0.4.6",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.38.5",
     "@supabase/ui": "^0.36.5",
     "geist": "^1.1.0",
+=======
+    "axios": "^1.6.1",
+>>>>>>> 0d564a31e1d28d73a87c6a0c703d45857cef60fd
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",

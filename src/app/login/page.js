@@ -1,25 +1,16 @@
-// const About = () => {
-//     return (  
-        
-//     );
-// }
- 
-// export default About;
+"use client";
 
-'use client'
-import Link from 'next/link';
-// import create from './create/page';
-import Head from 'next/head';
-import Image from 'next/image';
-import { useState } from 'react';
-
+import Head from "next/head";
+import Image from "next/image";
+import { useState } from "react";
+import "../style/globals.css";
 const Home = () => {
   const [plusButtonClickCount, setPlusButtonClickCount] = useState(0);
 
   const handlePlusButtonClick = () => {
     setPlusButtonClickCount((prevCount) => prevCount + 1);
   };
-  
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
       <Head>
@@ -42,7 +33,6 @@ const Home = () => {
 
       <main className="flex flex-col items-center justify-center flex-grow">
         <div className="flex items-center">
-          
           <div className="bg-white-100 p-8 rounded shadow-md w-96 mr-4">
             <h2 className="text-2xl font-bold mb-4">New chatbot info</h2>
             <p>Content of the new chatbotS</p>
@@ -53,12 +43,13 @@ const Home = () => {
             <p>Chatbots made: {plusButtonClickCount}</p>
           </div>
 
-          <Link href='create'
+          <a
+            href="../chatbot-info"
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full ml-4 focus:outline-none focus:shadow-outline"
             onClick={handlePlusButtonClick}
           >
             +
-          </Link>
+          </a>
         </div>
       </main>
     </div>
@@ -66,4 +57,3 @@ const Home = () => {
 };
 
 export default Home;
-
