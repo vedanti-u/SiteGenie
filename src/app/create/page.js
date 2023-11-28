@@ -1,22 +1,22 @@
-
 "use client";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../style/globals.css";
 
-// Create the functional component
 const Create = () => {
-  // State to manage input value
   const [inputValue, setInputValue] = useState("");
 
-  // Handle input change
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  // Function to handle data fetching
   const fetchData = async () => {
+    if (inputValue.trim() === "") {
+      toast.error("Please enter a valid URL before generating ChatBOT");
+      return;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -33,7 +33,7 @@ const Create = () => {
 
     try {
       const response = await fetch(
-        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbot", 
+        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbot",
         requestOptions
       );
 
@@ -50,9 +50,14 @@ const Create = () => {
       toast.error("Error adding data");
     }
   };
+  // ... (previous code)
 
-  // Function to handle data updating
   const fetchUpdateData = async () => {
+    if (inputValue.trim() === "") {
+      toast.error("Please enter a valid URL before updating data");
+      return;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -75,16 +80,23 @@ const Create = () => {
 
       if (response.ok) {
         toast.success("Data updated successfully");
-      } else if(inputValue.length === 0){
-        toast.error("Error updating data");
+      } else {
+        const errorData = await response.json();
+        toast.error(
+          `Error updating data: ${errorData.message || "Unknown error"}`
+        );
       }
     } catch (error) {
       console.error("Error updating data:", error);
       toast.error("Error updating data");
     }
   };
-
   const fetchDeleteData = async () => {
+    if (inputValue.trim() === "") {
+      toast.error("Please enter a valid URL before deleting data");
+      return;
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -119,7 +131,6 @@ const Create = () => {
       toast.error("Error deleting data");
     }
   };
-  
 
   return (
     <div className="flex items-center justify-center h-screen">

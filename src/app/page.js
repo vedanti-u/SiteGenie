@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from 'next/image';
+import Footer from "./components/footer";
+// import Faqs from "./components/faqs";
+import CTA from "./components/cta-section";
 // import { GeistSans } from 'geist/font/sans';
 import './style/globals.css'
 
@@ -182,6 +185,8 @@ export default function Example() {
           </div>
         </div>
       </div>
+      <CTA/>
+      <Footer/>
     </div>
   );
 }
