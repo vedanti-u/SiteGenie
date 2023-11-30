@@ -4,7 +4,7 @@ const create = {
     tiers: [
       {
         title: 'Box 1',
-        price: 'Click Below',
+        price: 'Create chatbot',
         cta: 'Click to add URL',
         link: 'create', 
       },
