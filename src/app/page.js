@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from 'next/image';
 // import { GeistSans } from 'geist/font/sans';
 import './style/globals.css'
+import FAQ_E from "./components/faqs";
+import CTA from "./components/cta-section";
+import Footer from "./components/footer";
 
 export default function Example() {
   return (
@@ -32,18 +35,12 @@ export default function Example() {
         </div>
 
         <div>
-        <Link
-            href="#"
-            className="m-2 px-8 py-3 border border-transparent text-base font-medium rounded-md bg-purple-500 hover:bg-purple-600"
-          >
-            Sign In
-          </Link>
 
           <Link
-            href="#"
+            href="../signin"
             className="px-8 py-3 border border-transparent text-base font-medium rounded-md bg-purple-500 hover:bg-purple-600"
           >
-            Login
+            Sign In
           </Link>
         </div>
       </nav>
@@ -119,14 +116,6 @@ export default function Example() {
                 </Link>
               </div>
               
-              <div>
-                <Link
-                  href="#"
-                  className="px-8 py-3 border border-transparent text-base font-medium rounded-md bg-purple-500 hover:bg-purple-600"
-                >
-                  Login
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -182,6 +171,10 @@ export default function Example() {
           </div>
         </div>
       </div>
+      <FAQ_E />
+      <CTA />
+      <Footer />
     </div>
+    
   );
 }

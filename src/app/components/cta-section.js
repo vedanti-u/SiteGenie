@@ -1,4 +1,3 @@
-import { GeistSans } from "geist/font/sans"
 
 export default function CTA() {
     return (

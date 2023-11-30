@@ -55,7 +55,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function FAQ_E() {
   return (
     <div className="bg-gray-50">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8" style={{fontFamily:'GeistSans, sans-serif'}}>
