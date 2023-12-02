@@ -1,6 +1,6 @@
 "use client"
 import { Disclosure } from "@headlessui/react"
-import { ChevronDownIcon } from "@heroicons/react/outline"
+//import { ChevronDownIcon } from "@heroicons/react/outline"
 
 const faqs = [
   {
@@ -70,10 +70,10 @@ export default function Example() {
                       <Disclosure.Button className="text-left w-full flex justify-between items-start text-blue-800">
                         <span className="font-medium text-gray-900">{faq.question}</span>
                         <span className="ml-6 h-7 flex items-center">
-                          <ChevronDownIcon
+                          {/* <ChevronDownIcon
                             className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
                             aria-hidden="true"
-                          />
+                          /> */}
                         </span>
                       </Disclosure.Button>
                     </dt>

@@ -11,27 +11,53 @@ import Link from 'next/link';
 // import create from './create/page';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient('https://jphemcuwfpxnynveilja.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaGVtY3V3ZnB4bnludmVpbGphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk5NTMxMTUsImV4cCI6MjAxNTUyOTExNX0.y8HPHiQHoXP0iIWnrgxptJ1X4uvw-ycRmiFNHnndSUM')
 const Home = () => {
+
   const [plusButtonClickCount, setPlusButtonClickCount] = useState(0);
 
   const handlePlusButtonClick = () => {
     setPlusButtonClickCount((prevCount) => prevCount + 1);
   };
+
+  const checkSession = async () => {
+   
+    const { data } = await supabase.auth.getSession();
+    console.log(data);
+
+  };
+  useEffect(() => {
+    checkSession();
+  },[]);
+
+  const signOut=async()=>{
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      router.push("/");
+    }
+  }
   
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
       <Head>
         <title>Next.js Avatar Page</title>
         <meta name="description" content="Next.js Avatar Page" />
         <link rel="icon" href="/favicon.ico" />
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+          onClick={signOut}
+        >
+          Sign Out
+        </button>
       </Head>
 
       <header className="w-full h-16 bg-teal-500 flex justify-end items-center p-4">
         <div className="relative w-10 h-10 mr-4">
           <Image
-            // src="/your-image.jpg"
+            src="../public/vercel.svg"
             alt="Avatar"
             className="rounded-full"
             width={40}

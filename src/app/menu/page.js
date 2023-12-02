@@ -1,5 +1,44 @@
 // import { CheckIcon } from '@heroicons/react/outline'
+'use client'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient('https://jphemcuwfpxnynveilja.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaGVtY3V3ZnB4bnludmVpbGphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk5NTMxMTUsImV4cCI6MjAxNTUyOTExNX0.y8HPHiQHoXP0iIWnrgxptJ1X4uvw-ycRmiFNHnndSUM')
+// const checkSession = async () => {
+   
+//   const { data } = await supabase.auth.getSession();
+//   console.log(data);
 
+// };
+// useEffect(() => {
+//   checkSession();
+// },[]);
+
+// const signOut=async()=>{
+//   const supabase = createClient('https://jphemcuwfpxnynveilja.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaGVtY3V3ZnB4bnludmVpbGphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk5NTMxMTUsImV4cCI6MjAxNTUyOTExNX0.y8HPHiQHoXP0iIWnrgxptJ1X4uvw-ycRmiFNHnndSUM')
+//   supabase.auth.signOut();
+//   router.push("/");
+
+// }
+const checkSession = async () => {
+  try {
+    const { data } = await supabase.auth.getSession();
+    console.log(data);
+  } catch (error) {
+    console.error("Error checking session:", error.message);
+  }
+};
+
+
+
+const signOut = async () => {
+  try {
+    await supabase.auth.signOut();
+    router.push("/");
+  } catch (error) {
+    console.error("Error signing out:", error.message);
+  }
+};
 const create = {
     tiers: [
       {
@@ -28,6 +67,10 @@ const create = {
   }
   
   export default function Home() {
+    //const router = useRouter();
+    useEffect(() => {
+      checkSession();
+    }, []);
     return (
       <div className="max-w-7xl mx-auto py-24 px-4 bg-white sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">

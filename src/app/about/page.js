@@ -1,11 +1,11 @@
 
-import '../style/globals.css'
+// import '../style/globals.css'
 
-const About = () => {
-    return (  
-        <h1>About </h1>
-    );
-// import Image from 'next/image'
+// const About = () => {
+//     return (  
+//         <h1>About </h1>
+//     );
+// // import Image from 'next/image'
 // //yeh main page hai jo first render hota hai
 // export default function Home() {
 //   return (
