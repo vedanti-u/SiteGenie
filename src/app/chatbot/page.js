@@ -1,10 +1,9 @@
 "use client";
-
 import "../style/globals.css";
 import { useState } from "react";
-import "../style/font.css";
+
 const Chatbot = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [answer, setAnswer] = useState("");
   const [chatLog, setChatLog] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
 
@@ -12,12 +11,12 @@ const Chatbot = () => {
     event.preventDefault();
     setChatLog((prevChatLog) => [
       ...prevChatLog,
-      { type: "user", message: inputValue },
+      { type: "user", message: answer },
     ]);
 
     const raw = JSON.stringify({
-      url: "https://skippi.in/",
-      prompt: inputValue,
+      url: inputValue,
+      prompt: answer,
     });
     // setIsLoading(true);
     const requestOptions = {
@@ -36,16 +35,16 @@ const Chatbot = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
+      setAnswer("");
       const result = await response.json(); // Parse the response as JSON
       console.log(result);
+
       const textData = result.text;
       setChatLog((prevChatLog) => [
         ...prevChatLog,
         { type: "bot", message: textData },
       ]);
       //setIsLoading(false);
-      setInputValue("");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -109,8 +108,8 @@ const Chatbot = () => {
               placeholder="Please type here....."
               className="flex-1 rounded-lg px-4 py-2 border border-black"
               id="inputField"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
             />
 
             <button
