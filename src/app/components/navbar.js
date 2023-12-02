@@ -1,48 +1,56 @@
-import "../style/globals.css";
+"use client";
+import { useState } from "react";
+
+import { close, logo, menu } from "../images-svgs";
+import { navLinks } from "../constants/page.js";
 
 const Navbar = () => {
+  const [active, setActive] = useState("Home");
+  const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="bg-gray border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="w-full flex py-6 justify-between items-center navbar">
+      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+        {navLinks.map((nav, index) => (
+          <li
+            key={nav.id}
+            className={`font-poppins font-normal cursor-pointer text-[16px] ${
+              active === nav.title ? "text-white" : "text-dimWhite"
+            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+            onClick={() => setActive(nav.title)}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="sm:hidden flex flex-1 justify-end items-center">
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] object-contain"
+          onClick={() => setToggle(!toggle)}
+        />
+
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-sticky"
+          className={`${
+            !toggle ? "hidden" : "flex"
+          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="../"
-                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                aria-current="page"
+          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+            {navLinks.map((nav, index) => (
+              <li
+                key={nav.id}
+                className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  active === nav.title ? "text-white" : "text-dimWhite"
+                } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
+                onClick={() => setActive(nav.title)}
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="../login"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="../chatbot"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                ChatBot
-              </a>
-            </li>
-            <li>
-              <a
-                href="../profile"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Testing Chatbot
-              </a>
-            </li>
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -51,3 +59,57 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// import "../style/globals.css";
+// import Link from "next/link";
+// const Navbar = () => {
+//   return (
+//     <nav className="bg-white-800 p-4 flex items-center justify-between shadow-md z-10">
+//       <div className="flex-shrink-0">
+//         {/* <img
+//       src="https://img.freepik.com/premium-vector/robot-chat-bot-icon-symbol-support-service-concept-vector-illustration_136875-4410.jpg?size=626&ext=jpg&ga=GA1.1.763251398.1687013890&semt=ais"
+//       alt="Logo"
+//       className="h-20 w-20"
+//     /> */}
+//       </div>
+
+//       <div className="hidden md:flex space-x-4">
+//         <Link
+//           href="video_Demo"
+//           className="hover:rounded-md hover:bg-purple-600 hover:shadow-md p-2"
+//         >
+//           Video Demo
+//         </Link>
+//         <Link
+//           href="features"
+//           className="hover:rounded-md hover:bg-purple-600 hover:shadow-md p-2"
+//         >
+//           Features
+//         </Link>
+//         <Link
+//           href="about_Us"
+//           className="hover:rounded-md hover:bg-purple-600 hover:shadow-md p-2"
+//         >
+//           About Us
+//         </Link>
+//         <Link
+//           href="our_Team"
+//           className="hover:rounded-md hover:bg-purple-600 hover:shadow-md p-2"
+//         >
+//           Our Team
+//         </Link>
+//       </div>
+
+//       <div className="ml-auto">
+//         <Link
+//           href="../signin"
+//           className="px-8 py-3 border border-transparent text-base font-medium rounded-md bg-purple-500 hover:bg-purple-600"
+//         >
+//           Sign In
+//         </Link>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
