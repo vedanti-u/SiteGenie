@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/clerk-js": "^4.70.5",
+    "@clerk/nextjs": "^4.29.9",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^1.0.6",
     "@radix-ui/react-accordion": "^1.1.2",

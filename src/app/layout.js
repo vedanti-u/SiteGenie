@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "../@/lib/utils";
+import { cn } from "@/lib/utils";
 
 const fontSans = FontSans({
   subsets: ["latin"],
