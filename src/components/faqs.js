@@ -1,28 +1,26 @@
 "use client";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/outline";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
     question: "Is there a demo that I can try?",
     answer:
-      "Yes, you can go and try out the demo. The demo bot you see is trained on the sitegpt.ai website content itself. So you can ask any questions related to website in that demo bot and it will answer it.",
+      "Yes, you can go and try out the demo. The demo bot you see is trained on the sitegpt.ai website content itself. So you can ask any questions related to the website in that demo bot and it will answer it.",
   },
   {
     question: "How do I train the chatbot?",
     answer:
-      "You can train the chatbot by adding a website link, a sitemap link, a Gitbook link. You can just enter a URL and the chatbot will be trained on all the content present on that URL.",
+      "You can train the chatbot by adding a website link, a sitemap link, or a Gitbook link. Just enter a URL, and the chatbot will be trained on all the content present on that URL.",
   },
   {
-    question: "How long does the training takes?",
+    question: "How long does the training take?",
     answer:
-      "It depends on the number of pages you are training. But usually, it should be done within a few minutes.",
+      "It depends on the number of pages you are training, but usually, it should be done within a few minutes.",
   },
   {
     question: "What type of content can we use to train the chatbot?",
@@ -42,16 +40,16 @@ const faqs = [
   {
     question: "How do I add the chatbot to my website?",
     answer:
-      "Each chatbot gets its own unique url, you can embed the chatbot on your own site via the embed code we provide. You can even directly link to the chatbot from your site.",
+      "Each chatbot gets its own unique URL. You can embed the chatbot on your own site via the embed code we provide. You can even directly link to the chatbot from your site.",
   },
   {
-    question: "Do you use open AI models or your own models?",
-    answer: "We use Open AI models at the moment.",
+    question: "Do you use OpenAI models or your own models?",
+    answer: "We use OpenAI models at the moment.",
   },
   {
     question: "Do you store the chatbot messages?",
     answer:
-      "Yes, we store the all the questions that are asked by the visitors and also all the answers that the chatbot replied with. We show all this chat history to the chatbot owner inside the dashboard.",
+      "Yes, we store all the questions that are asked by the visitors and also all the answers that the chatbot replied with. We show all this chat history to the chatbot owner inside the dashboard.",
   },
 ];
 
@@ -71,32 +69,13 @@ export default function FAQ_E() {
             Frequently asked questions
           </h2>
           <dl className="mt-6 space-y-6 divide-y divide-gray-200">
-            {faqs.map((faq) => (
-              <Disclosure as="div" key={faq.question} className="pt-6">
-                {({ open }) => (
-                  <>
-                    <dt className="text-lg">
-                      <Disclosure.Button className="text-left w-full flex justify-between items-start text-blue-800">
-                        <span className="font-medium text-gray-900">
-                          {faq.question}
-                        </span>
-                        <span className="ml-6 h-7 flex items-center">
-                          <ChevronDownIcon
-                            className={classNames(
-                              open ? "-rotate-180" : "rotate-0",
-                              "h-6 w-6 transform"
-                            )}
-                            aria-hidden="true"
-                          />
-                        </span>
-                      </Disclosure.Button>
-                    </dt>
-                    <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                      <p className="text-base text-gray-700">{faq.answer}</p>
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
+            {faqs.map((faq, index) => (
+              <Accordion key={index} type="single" collapsible>
+                <AccordionItem>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              </Accordion>
             ))}
           </dl>
         </div>
