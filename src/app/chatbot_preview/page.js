@@ -1,8 +1,6 @@
 "use client";
 import "../style/globals.css";
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
 import SvgLogo from "../../components/chatbotLogo";
 import Image from "next/image";
 
@@ -11,11 +9,6 @@ const Preview = () => {
 
   return (
     <>
-      {/* <h1>Its a preview page</h1>
-      <h1 className="block xl:inline">Data to enrich your</h1>
-      <Chatbot />
-      <button href="./chatbot">Get Link for Integration</button> */}
-
       <div className="min-h-full">
         <nav className="bg-white border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

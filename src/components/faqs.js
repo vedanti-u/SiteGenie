@@ -1,6 +1,12 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const faqs = [
   {
@@ -47,7 +53,6 @@ const faqs = [
     answer:
       "Yes, we store the all the questions that are asked by the visitors and also all the answers that the chatbot replied with. We show all this chat history to the chatbot owner inside the dashboard.",
   },
-  // More questions...
 ];
 
 function classNames(...classes) {
