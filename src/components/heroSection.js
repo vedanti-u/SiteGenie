@@ -6,13 +6,6 @@ const HeroSection = () => {
   return (
     <>
       <div class="relative bg-gray-50 overflow-hidden">
-        <div
-          class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
-          aria-hidden="true"
-        >
-          <div class="relative h-full max-w-7xl mx-auto"></div>
-        </div>
-
         <div class="relative pt-6 pb-16 sm:pb-24">
           <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <nav
