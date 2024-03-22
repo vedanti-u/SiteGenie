@@ -1,7 +1,8 @@
+"use client";
 import HeroSection from "@/components/heroSection";
 import FAQ_E from "@/components/faqs";
 import CTA from "@/components/cta-section";
-// import Footer
+import "@/styles/globals.css";
 
 export default function Example() {
   return (

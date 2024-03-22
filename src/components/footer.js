@@ -1,4 +1,5 @@
 import React from "react";
+import "@/styles/globals.css";
 
 const Feature = ({ icon, title, description }) => {
   return (

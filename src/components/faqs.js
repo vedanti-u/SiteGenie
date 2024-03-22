@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
+import "@/styles/globals.css";
 const faqs = [
   {
     question: "Is there a demo that I can try?",

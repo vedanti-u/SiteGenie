@@ -1,5 +1,6 @@
 import SvgLogo from "./chatbotLogo";
 import { Button } from "@/components/ui/button";
+import "@/styles/globals.css";
 
 const HeroSection = () => {
   return (
