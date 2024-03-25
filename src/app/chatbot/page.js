@@ -1,24 +1,38 @@
 "use client";
-import "../style/globals.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import SvgLogo from "@/components/chatbotLogo";
+import { Button } from "@/components/ui/button";
 
 const Chatbot = () => {
-  const [answer, setAnswer] = useState("");
+  const [question, setQuestion] = useState("");
   const [chatLog, setChatLog] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  var router = useSearchParams();
+  useEffect(() => {
+    // Set inputValue on component mount using query parameter
+    setQuestion(router.get("url") || "");
+  }, [router]);
+
+  //console.log(router.get('url'))
   // const [isLoading, setIsLoading] = useState(false);
+  //setInputValue(router.get('url'));
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     setChatLog((prevChatLog) => [
       ...prevChatLog,
-      { type: "user", message: answer },
+      { type: "user", message: question },
     ]);
 
     const raw = JSON.stringify({
-      url: inputValue,
-      prompt: answer,
+      url: "https://portfolio-react-jaya.vercel.app/",
+      prompt: question,
     });
-    // setIsLoading(true);
+    setQuestion("");
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -35,7 +49,7 @@ const Chatbot = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      setAnswer("");
+
       const result = await response.json(); // Parse the response as JSON
       console.log(result);
 
@@ -47,6 +61,8 @@ const Chatbot = () => {
       //setIsLoading(false);
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setIsLoading(false); // Set loading state back to false after receiving the result
     }
   };
 
@@ -54,92 +70,133 @@ const Chatbot = () => {
     <>
       <main
         style={{
-          fontFamily: "GeistSans, sans-serif",
           fontWeight: "400",
-          height: "100vh",
+          height: "97vh",
+          margin: "8px",
         }}
-        className="flex flex-col items-center justify-center"
+        className="items-center justify-center"
       >
-        <section className="chatbot-section flex flex-col origin:w-[800px] w-full origin:h-[735px] h-full rounded-md p-2 md:p-6">
-          <div className="chatbot-header pb-6">
-            <div className="flex justify-between">
-              <div className="flex items-center gap-2">
-                <svg width="24" height="25" viewBox="0 0 24 25">
-                  <path d="M20 9.96057V7.96057C20 6.86057 19.1 5.96057 18 5.96057H15C15 4.30057 13.66 2.96057 12 2.96057C10.34 2.96057 9 4.30057 9 5.96057H6C4.9 5.96057 4 6.86057 4 7.96057V9.96057C2.34 9.96057 1 11.3006 1 12.9606C1 14.6206 2.34 15.9606 4 15.9606V19.9606C4 21.0606 4.9 21.9606 6 21.9606H18C19.1 21.9606 20 21.0606 20 19.9606V15.9606C21.66 15.9606 23 14.6206 23 12.9606C23 11.3006 21.66 9.96057 20 9.96057ZM7.5 12.4606C7.5 11.6306 8.17 10.9606 9 10.9606C9.83 10.9606 10.5 11.6306 10.5 12.4606C10.5 13.2906 9.83 13.9606 9 13.9606C8.17 13.9606 7.5 13.2906 7.5 12.4606ZM16 17.9606H8V15.9606H16V17.9606ZM15 13.9606C14.17 13.9606 13.5 13.2906 13.5 12.4606C13.5 11.6306 14.17 10.9606 15 10.9606C15.83 10.9606 16.5 11.6306 16.5 12.4606C16.5 13.2906 15.83 13.9606 15 13.9606Z" />
-                </svg>
-                <h1
-                  style={{
-                    fontFamily: "GeistSans, sans-serif ",
-                    fontWeight: "600",
-                  }}
-                  className="font-sans chatbot-text-primary text-xl md:text-2xl font-medium"
+        <section className="flex flex-col w-full h-full">
+          <div className="chatbot-header bg-indigo-600 text-white">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <Button
+                  variant="link"
+                  className="bg-indigo-600 text-white hover:bg-indigo-600"
                 >
-                  Chatbot
-                </h1>
+                  Go Back
+                </Button>
+                <div className="flex items-center justify-center">
+                  <SvgLogo style={{ fill: "white", marginRight: "0.5rem" }} />
+                  <span
+                    className="font-semibold text-white "
+                    style={{ fontSize: "2em" }}
+                  >
+                    SiteGenie
+                  </span>
+                </div>
               </div>
             </div>
           </div>
+
           <div className="flex-1 relative overflow-y-auto my-4 md:my-6">
             <div className="block mt-4 md:mt-6 pb-[7px] clear-both">
-              {chatLog.map((message, index) => (
-                <div
-                  key={index}
-                  className={`flex ${
-                    message.type === "user" ? "justify-end" : "justify-start"
-                  }`}
-                >
+              {isLoading ? (
+                <>
                   <div
-                    className={`${
-                      message.type === "user"
-                        ? "bg-black text-white"
-                        : "bg-blue-900 text-white"
-                    } rounded-lg p-4 max-w-sm`}
+                    className="flex justify-end"
+                    key={chatLog.length} // Use a unique key to force re-render
                   >
-                    {message.message}
+                    <div className="bg-indigo-600 text-white rounded-lg p-4 max-w-sm">
+                      {question}
+                    </div>
                   </div>
-                </div>
-              ))}
+                  <button
+                    disabled
+                    type="button"
+                    class="text-white bg-gray-500  rounded-lg p-4 max-w-sm"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      role="status"
+                      class="inline w-4 h-4 me-3 text-white animate-spin"
+                      viewBox="0 0 100 101"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                        fill="#E5E7EB"
+                      />
+                      <path
+                        d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    Loading...
+                  </button>
+                </>
+              ) : (
+                chatLog.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`flex ${
+                      message.type === "user" ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    <div
+                      className={`${
+                        message.type === "user"
+                          ? "bg-indigo-600 text-white"
+                          : "bg-gray-500 text-white"
+                      } rounded-lg p-4 max-w-sm`}
+                    >
+                      {message.message}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
+          <div className="chatbot-footer">
+            <form className="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="Please type here....."
+                className="flex-1 rounded-lg px-4 py-2 border border-indigo-600"
+                id="inputField"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+              />
 
-          <form className="flex items-center gap-2">
-            <input
-              type="text"
-              placeholder="Please type here....."
-              className="flex-1 rounded-lg px-4 py-2 border border-black"
-              id="inputField"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-            />
-
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="flex-shrink-0 bg-black text-white rounded-md px-4 py-2 transition duration-300 ease-in-out  focus:outline-none focus:ring flex items-center"
-              id="submitButton"
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="flex-shrink-0 bg-indigo-600 text-white rounded-md px-4 py-2 transition duration-300 ease-in-out  focus:outline-none focus:ring flex items-center gap-2"
+                id="submitButton"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M2.925 5.025L9.18333 7.70833L2.91667 6.875L2.925 5.025ZM9.175 12.2917L2.91667 14.975V13.125L9.175 12.2917ZM1.25833 2.5L1.25 8.33333L13.75 10L1.25 11.6667L1.25833 17.5L18.75 10L1.25833 2.5Z"
-                />
-              </svg>
-              <span className="hidden md:inline-block font-semibold text-sm">
-                Send
-              </span>
-            </button>
-          </form>
+                <span className="hidden md:inline-block font-semibold text-sm">
+                  Send
+                </span>
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M2.925 5.025L9.18333 7.70833L2.91667 6.875L2.925 5.025ZM9.175 12.2917L2.91667 14.975V13.125L9.175 12.2917ZM1.25833 2.5L1.25 8.33333L13.75 10L1.25 11.6667L1.25833 17.5L18.75 10L1.25833 2.5Z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
         </section>
       </main>
-      ;
     </>
   );
 };

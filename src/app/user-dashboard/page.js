@@ -12,6 +12,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import Create from "@/components/createChatbot";
 
 const create = {
   tiers: [
@@ -74,17 +75,23 @@ export default function Home() {
         </header>
         <main>
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            {/* Replace with your content */}
-
             <div className="px-4 py-12 sm:px-0">
               <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                <div className="m-8 relative p-2 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-row items-center w-80 text-indigo-700 hover:bg-indigo-100">
-                  <Button
-                    href="/create-chatbot"
-                    className="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Create New
-                  </Button>
+                <div className="m-8 relative p-2">
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button
+                        type="primary"
+                        as="a"
+                        className="bg-indigo-600 text-white"
+                      >
+                        Create New
+                      </Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <Create />
+                    </DrawerContent>
+                  </Drawer>
                 </div>
                 <div className="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">
                   <div className="mt-0 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
