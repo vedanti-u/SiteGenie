@@ -3,6 +3,7 @@ import HeroSection from "@/components/heroSection";
 import FAQ_E from "@/components/faqs";
 import CTA from "@/components/cta-section";
 import "@/styles/globals.css";
+import FooterSection from "@/components/footer";
 
 export default function Example() {
   return (
@@ -10,6 +11,7 @@ export default function Example() {
       <HeroSection />
       <FAQ_E />
       <CTA />
+      <FooterSection />
     </div>
   );
 }

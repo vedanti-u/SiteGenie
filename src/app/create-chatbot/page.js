@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../style/globals.css";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const Create = () => {
   var router = useRouter();
@@ -113,6 +113,7 @@ const Create = () => {
 
     setIsLoading(true);
 
+    // ... (remaining code)
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -158,7 +159,7 @@ const Create = () => {
               <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                 <div className="grid grid-cols-3 gap-6">
                   <div className="col-span-3 sm:col-span-2">
-                    <label className="block text-lg font-medium text-gray-700">
+                    <label className="block text-lg font-medium text-black">
                       Add URL
                     </label>
                     <div className="mt-1 flex rounded-md shadow-sm">
@@ -174,7 +175,7 @@ const Create = () => {
                 </div>
               </div>
             </div>
-            <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <div className="px-4 py-3 bg-gray-50 text-right sm:px-6 gap-4">
               {isLoading ? (
                 <button
                   disabled
@@ -202,33 +203,34 @@ const Create = () => {
                 </button>
               ) : (
                 <>
-                  <a
-                    type="button"
-                    onClick={fetchUpdateData}
-                    className="inline-flex justify-center m-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Update
-                  </a>
-                  <a
-                    type="button"
-                    onClick={fetchDeleteData}
-                    className="inline-flex justify-center m-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md  text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Delete
-                  </a>
-                  <a
-                    type="button"
-                    onClick={fetchData}
-                    className="inline-flex justify-center m-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Generate ChatBOT
-                  </a>
-
+                  <div className="space-x-4">
+                    <Button
+                      type="primary"
+                      onClick={fetchUpdateData}
+                      className="bg-indigo-700 hover:bg-blue-600"
+                    >
+                      Update
+                    </Button>
+                    <Button
+                      type="primary"
+                      onClick={fetchDeleteData}
+                      className="bg-indigo-700 hover:bg-blue-600"
+                    >
+                      Delete
+                    </Button>
+                    <Button
+                      type="primary"
+                      onClick={fetchData}
+                      className="bg-indigo-700 hover:bg-blue-600"
+                    >
+                      Generate ChatBOT
+                    </Button>
+                  </div>
                   {showNewButton && (
                     <button
                       type="button"
                       onClick={() => {
-                        router.push(`/chatbot?url=${inputValue}`);
+                        window.location.href = `/chatbot?url=${inputValue}`;
                       }}
                       className="inline-flex justify-center m-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                     >

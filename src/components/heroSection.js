@@ -66,14 +66,24 @@ const HeroSection = () => {
                 </a>
               </div>
               <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 gap-4">
-                <span class="inline-flex rounded-md shadow">
-                  <Button href="/sign-in" variant="secondary">
-                    SignIn
-                  </Button>
-                  <Button href="/sign-up" variant="secondary">
-                    SignUp
-                  </Button>
-                </span>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/sign-in";
+                  }}
+                  variant="primary"
+                  className="bg-indigo-700 text-white"
+                >
+                  SignIn
+                </Button>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/sign-up";
+                  }}
+                  variant="primary"
+                  className="bg-indigo-700 text-white"
+                >
+                  SignUp
+                </Button>
               </div>
             </nav>
           </div>
@@ -85,19 +95,20 @@ const HeroSection = () => {
                   quick wins! 🚀✨ #EffortlessChats
                 </span>
               </h1>
-              <p class="mt-3 max-w-md mx-auto text-base text-gray-600 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              <p class="mt-3 max-w-md mx-auto text-base text-gray-800 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                 Revolutionize user experience with our website-tailored chatbot,
                 meticulously trained and fine-tuned on your data, ensuring
                 unparalleled efficiency and time-saving interactions.
               </p>
               <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                 <div class="rounded-md shadow">
-                  <a
-                    href="/sign-up"
-                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                  <Button
+                    href="/sign-in"
+                    variant="secondary"
+                    className="bg-indigo-700 text-white"
                   >
-                    Create Chatbot
-                  </a>
+                    Create ChatBOT
+                  </Button>
                 </div>
               </div>
             </div>
