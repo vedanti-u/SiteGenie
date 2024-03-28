@@ -16,6 +16,13 @@
   scroll-behavior: smooth;
 }
 
+.hero-section {
+  background-image: url("D:/Grind/site-frontend-sitegenie/public/bg-wavy.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* Add any additional styles as needed */
+}
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
