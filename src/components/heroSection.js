@@ -1,15 +1,11 @@
 import SvgLogo from "./chatbotLogo";
+import { Button } from "@/components/ui/button";
+import "@/styles/globals.css";
+
 const HeroSection = () => {
   return (
     <>
       <div class="relative bg-gray-50 overflow-hidden">
-        <div
-          class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
-          aria-hidden="true"
-        >
-          <div class="relative h-full max-w-7xl mx-auto"></div>
-        </div>
-
         <div class="relative pt-6 pb-16 sm:pb-24">
           <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <nav
@@ -71,18 +67,12 @@ const HeroSection = () => {
               </div>
               <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 gap-4">
                 <span class="inline-flex rounded-md shadow">
-                  <a
-                    href="/sign-in"
-                    class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-blue-800"
-                  >
+                  <Button href="/sign-in" variant="secondary">
                     SignIn
-                  </a>
-                  <a
-                    href="/sign-up"
-                    class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-blue-800"
-                  >
+                  </Button>
+                  <Button href="/sign-up" variant="secondary">
                     SignUp
-                  </a>
+                  </Button>
                 </span>
               </div>
             </nav>

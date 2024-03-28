@@ -1,18 +1,28 @@
 "use client";
+import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Roboto } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 
-const roboto = Roboto({
-  weight: "400",
+import { cn } from "@/lib/utils";
+
+const fontSans = FontSans({
   subsets: ["latin"],
-  display: "swap",
+  variable: "--font-sans",
 });
 
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={roboto.className}>
-        <body>{children}</body>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
