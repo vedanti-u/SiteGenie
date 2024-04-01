@@ -1,14 +1,11 @@
 "use client";
 import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Inter as FontSans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
+import { twMerge } from "tailwind-merge";
+import Animate from "@/components/animate";
 
-import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const inter = DM_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
@@ -16,12 +13,9 @@ export default function RootLayout({ children }) {
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
+          className={twMerge("min-h-screen bg-background", inter.className)}
         >
-          {children}
+          <Animate>{children}</Animate>
         </body>
       </html>
     </ClerkProvider>

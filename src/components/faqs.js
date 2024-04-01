@@ -40,20 +40,36 @@ function classNames(...classes) {
 
 export default function FAQ_E() {
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Frequently asked questions
-          </h2>
-          <Accordion>
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+          <div>
+            <h2 class="text-3xl font-extrabold text-gray-900">
+              Frequently asked questions
+            </h2>
+            <p class="mt-4 text-lg text-gray-500">
+              Can’t find the answer you’re looking for? Reach out to our{" "}
+              <a
+                href="#"
+                class="font-medium text-indigo-600 hover:text-indigo-500"
+              >
+                customer support
+              </a>{" "}
+              team.
+            </p>
+          </div>
+          <div class="mt-12 lg:mt-0 lg:col-span-2">
+            <dl class="space-y-12">
+              <Accordion>
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger>{faq.question}</AccordionTrigger>
+                    <AccordionContent>{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </dl>
+          </div>
         </div>
       </div>
     </div>
