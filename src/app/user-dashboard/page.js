@@ -1,16 +1,8 @@
 "use client";
+import "../../styles/globals.css";
 import SvgLogo from "../../components/chatbotLogo";
-import { UserButton } from "@clerk/nextjs";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+//import { UserButton } from "@clerk/nextjs";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import Create from "@/components/createChatbot";
 
@@ -60,7 +52,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
-              <UserButton afterSignOutUrl="/" />
+              {/* <UserButton afterSignOutUrl="/" /> */}
             </div>
           </div>
         </div>
@@ -76,7 +68,7 @@ export default function Home() {
         <main>
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div className="px-4 py-12 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
+              <div className="border-4 border-gray-200 rounded-lg h-96">
                 <div className="m-8 relative p-2">
                   <Drawer>
                     <DrawerTrigger asChild>
