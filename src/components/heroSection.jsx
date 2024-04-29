@@ -1,27 +1,10 @@
 import SvgLogo from "./chatbotLogo";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import "@/styles/globals.css";
 import styles from "../styles/globals.css";
 import Link from "next/link";
 import { Icons } from "./shared/icons";
-import { cn } from "@/lib/utils";
-
 const HeroSection = () => {
-  // const { stargazers_count: stars } = await fetch(
-  //   "https://api.github.com/repos/mickasmt/next-saas-stripe-starter",
-  //   {
-  //     ...(env.GITHUB_OAUTH_TOKEN && {
-  //       headers: {
-  //         Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //     }),
-  //     // data will revalidate every hour
-  //     next: { revalidate: 3600 },
-  //   },
-  // )
-  //   .then((res) => res.json())
-  //   .catch((e) => console.log(e));
   return (
     <>
       <div className={`hero-section ${styles.heroSection}`}>
@@ -80,14 +63,7 @@ const HeroSection = () => {
               <div className="container flex max-w-5xl flex-col items-center gap-5 text-center">
                 <Link
                   href="https://twitter.com/miickasmt/status/1719892161095745801"
-                  className={cn(
-                    buttonVariants({
-                      variant: "outline",
-                      size: "sm",
-                      rounded: "full",
-                    }),
-                    "px-4"
-                  )}
+                  className="border border-input hover:bg-accent hover:text-accent-foreground rounded-full h-9 px-4"
                   target="_blank"
                 >
                   <span className="mr-3">🎉</span> Introducing on{" "}
@@ -95,9 +71,9 @@ const HeroSection = () => {
                 </Link>
 
                 <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
-                  Kick off with a bang with{" "}
+                  Maximize chatbot vibes for {}
                   <span className="text-gradient_indigo-purple font-extrabold">
-                    SaaS Starter
+                    quick wins! 🚀✨
                   </span>
                 </h1>
 
@@ -108,8 +84,9 @@ const HeroSection = () => {
                     animationFillMode: "forwards",
                   }}
                 >
-                  Build your next project using Next.js 14, Prisma, Neon,
-                  Auth.js v5, Resend, React Email, Shadcn/ui, Stripe.
+                  Revolutionize user experience with our website-tailored //
+                  chatbot, meticulously trained and fine-tuned on your data, //
+                  ensuring unparalleled efficiency and time-saving interactions.
                 </p>
 
                 <div
@@ -122,32 +99,21 @@ const HeroSection = () => {
                   <Link
                     href="/pricing"
                     prefetch={true}
-                    className={cn(
-                      buttonVariants({ size: "lg", rounded: "full" }),
-                      "gap-2"
-                    )}
+                    className="h-11 px-8 rounded-full gap-2"
                   >
                     <span>Go Pricing</span>
                     <Icons.arrowRight className="size-4" />
                   </Link>
                   <Link
-                    href={siteConfig.links.github}
+                    href="/user-dashboard"
                     target="_blank"
                     rel="noreferrer"
-                    className={cn(
-                      buttonVariants({
-                        variant: "outline",
-                        size: "lg",
-                        rounded: "full",
-                      }),
-                      "px-5"
-                    )}
+                    className="border border-input hover:bg-accent hover:text-accent-foreground h-11 rounded-full px-8"
                   >
                     <Icons.gitHub className="mr-2 size-4" />
                     <p>
                       <span className="hidden sm:inline-block">Star on</span>{" "}
                       GitHub{" "}
-                      <span className="font-semibold">{nFormatter(stars)}</span>
                     </p>
                   </Link>
                 </div>
