@@ -1,23 +1,29 @@
-/** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+const themer = require("@tailus/themer");
+
 module.exports = {
-  darkMode: ["class"],
   content: [
+    "./*.html",
+    "./*.js",
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
   ],
-  prefix: "",
+  darkMode: "media",
+  safelist: ["isToggled"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+    fontFamily: {
+      sans: ["Geist", "Inter", ...defaultTheme.fontFamily.sans],
+      mono: ["GeistMono", "fira-code", ...defaultTheme.fontFamily.mono],
     },
     extend: {
       keyframes: {
+        loop: {
+          to: {
+            "offset-distance": "100%",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -33,5 +39,21 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    themer({
+      palette: {
+        extend: "nature",
+      },
+      radius: "smoothest",
+      background: "light",
+      border: "light",
+      padding: "large",
+      components: {
+        button: {
+          rounded: "2xl",
+        },
+      },
+    }),
+  ],
 };
