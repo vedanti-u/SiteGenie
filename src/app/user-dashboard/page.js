@@ -1,15 +1,17 @@
 "use client";
 import "../../styles/globals.css";
 import SvgLogo from "../../components/chatbotLogo";
-//import { UserButton } from "@clerk/nextjs";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import Create from "@/components/createChatbot";
+import { Copy } from "lucide-react";
+
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const create = {
   tiers: [
     {
-      title: "www.daywiseai.com",
+      title: "daywiseai.com",
       price: "DaywiseAi",
       cta: "Preview Chatbot",
       link: "http://localhost:3000/preview?url=https://daywiseai.com/",
@@ -71,22 +73,17 @@ export default function Home() {
               <div className="px-4 py-6 sm:px-0">
                 <div className="border border-gray-200 rounded-lg h-50 flex flex-col justify-center items-center shadow-lg">
                   <div className="m-8 relative p-2 text-center">
-                    <Drawer>
-                      <div className="text-2xl text-gray-600">
-                        To create a chatbot click on below button
-                      </div>
-                      <DrawerTrigger>
-                        <Button
-                          variant="primary"
-                          className="bg-indigo-500 text-white mt-6 px-6 py-3 text-lg rounded-lg"
-                        >
-                          + Create New
-                        </Button>
-                      </DrawerTrigger>
-                      <DrawerContent>
+                    <div className="text-2xl text-gray-600">
+                      To create a chatbot click on below button
+                    </div>
+                    <Dialog className="bg-white">
+                      <DialogTrigger asChild>
+                        <Button variant="outline"></Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md">
                         <Create />
-                      </DrawerContent>
-                    </Drawer>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
               </div>
@@ -104,7 +101,7 @@ export default function Home() {
                     {create.tiers.map((tier) => (
                       <div
                         key={tier.title}
-                        className="relative p-6 bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col"
+                        className="relative p-10 bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col"
                       >
                         <div className="flex-1">
                           <h3 className="text-xl text-indigo-500">
@@ -134,7 +131,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              s
             </div>
           </main>
         </div>

@@ -4,13 +4,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@/components/ui/button";
 import {
-  DrawerClose,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "./ui/drawer";
-
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 const Create = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -156,13 +157,13 @@ const Create = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-sm bg-white">
-      <DrawerHeader>
-        <DrawerTitle>Create Chatbot</DrawerTitle>
-        <DrawerDescription>
+    <div className="mx-auto w-full max-w-sm">
+      <DialogHeader className="bg-white">
+        <DialogTitle>Create Chatbot</DialogTitle>
+        <DialogDescription>
           To create chatbot, enter a valid URL from any website.
-        </DrawerDescription>
-      </DrawerHeader>
+        </DialogDescription>
+      </DialogHeader>
       <div className="p-2 pb-8">
         <input
           type="url"
@@ -172,8 +173,8 @@ const Create = () => {
           placeholder="https://example.com"
         />
       </div>
-      <DrawerFooter>
-        <div className="bg-whitess text-right sm:px-6 gap-4">
+      <DialogFooter>
+        <div className="text-right gap-4">
           {isLoading ? (
             <Button
               disabled
@@ -199,22 +200,25 @@ const Create = () => {
               Loading...
             </Button>
           ) : (
-            <div className="px-4 py-2 flex flex-col space-y-6">
+            <div className="px-4 py-2 flex space-x-6">
               <Button
+                variant="primary"
                 onClick={fetchUpdateData}
-                className="rounded-md border border-black bg-black text-white"
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Update
               </Button>
               <Button
+                variant="primary"
                 onClick={fetchDeleteData}
-                className="rounded-md border border-black bg-black text-white"
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Delete
               </Button>
               <Button
+                variant="primary"
                 onClick={fetchData}
-                className="rounded-md border border-black bg-black text-white"
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Generate Chatbot
               </Button>
@@ -222,12 +226,7 @@ const Create = () => {
           )}
           <ToastContainer />
         </div>
-        <DrawerClose asChild>
-          <Button variant="outline" className="text-white">
-            Go Back
-          </Button>
-        </DrawerClose>
-      </DrawerFooter>
+      </DialogFooter>
     </div>
   );
 };
