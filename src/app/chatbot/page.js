@@ -10,7 +10,6 @@ const Chatbot = () => {
 
   var router = useSearchParams();
   useEffect(() => {
-    // Set inputValue on component mount using query parameter
     setQuestion(router.get("url") || "");
   }, [router]);
 
@@ -76,7 +75,7 @@ const Chatbot = () => {
                   variant="link"
                   className="bg-indigo-600 text-white hover:bg-indigo-600"
                 >
-                  Go Back
+                  GenieBot
                 </Button>
               </div>
             </div>

@@ -47,7 +47,6 @@ const Navbar = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <ShimmerButton
             className="shadow-2xl bg-indigo-600 py-3"
-            href="/sign-in"
           >
             <a
               className="flex items-center whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:to-slate-900/10 space-x-3"
