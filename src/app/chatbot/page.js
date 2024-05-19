@@ -3,12 +3,8 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import "../../styles/globals.css";
-import {
-  ArrowLeft,
-  ArrowLeftFromLineIcon,
-  BackpackIcon,
-  SendHorizontalIcon,
-} from "lucide-react";
+import { ArrowLeft, BotIcon, SendHorizontalIcon } from "lucide-react";
+
 const Chatbot = () => {
   const [question, setQuestion] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -74,15 +70,19 @@ const Chatbot = () => {
     <>
       <main className="items-center justify-center h-screen">
         <section className="flex flex-col w-full h-full">
-          <div className="chatbot-header bg-indigo-600 text-white">
+          <div className="chatbot-header bg-indigo-600 text-white py-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center">
+              <div className="flex items-center space-x-2">
                 <Button
-                  variant="link"
-                  className="bg-indigo-600 text-white hover:bg-indigo-600"
+                  variant="primary"
+                  className="flex items-center bg-indigo-600 text-white hover:bg-indigo-600"
                 >
-                  <a href="/user-dashboard">
-                    <ArrowLeft />
+                  <a
+                    href="/user-dashboard"
+                    className="flex items-center space-x-2"
+                  >
+                    <ArrowLeft className="text-bold" />
+                    <span className="text-2xl">Your ChatBot</span>
                   </a>
                 </Button>
               </div>
