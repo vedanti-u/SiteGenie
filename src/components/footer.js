@@ -7,7 +7,9 @@ const FooterSection = () => {
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="max-w-3xl mx-auto">
             <a href="/" class="flex justify-center ">
-              <span className="text-semibold text-3xl">SiteGenie.ai</span>
+              <span className="self-center text-black text-4xl font-semibold whitespace-nowrap">
+                Site<span className="text-indigo-600">Genie.ai</span>
+              </span>{" "}
             </a>
             <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
               <li>
@@ -51,6 +53,7 @@ const FooterSection = () => {
                 <svg
                   width="65px"
                   height="65px"
+                  className="hover:text-indigo-600"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
