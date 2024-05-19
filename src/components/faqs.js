@@ -40,29 +40,42 @@ function classNames(...classes) {
 
 export default function FAQ_E() {
   return (
-    <section class="py-24">
+    <section class="py-15">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-16">
+        <div class="mb-8">
           <h2 class="text-4xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
             Frequently asked questions
           </h2>
+          <div className="mb-4 py-4 text-center text-gray-600">
+            <p>
+              Here are a few of the questions we get the most. If you dont see
+              whats on your mind, reach out to us anytime on phone, chat, or
+              email.
+            </p>
+          </div>
         </div>
         <div class="accordion-group" data-accordion="default-accordion">
           <div class="accordion " id="basic-heading-one-with-icon">
             <button
-              class="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
+              class="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-4xl transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
               aria-controls="basic-collapse-one-with-icon"
             ></button>
-              <Accordion>
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} class="border border-solid border-gray-300 p-4 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4 active">
-                    <AccordionTrigger>{faq.question}</AccordionTrigger>
-                    <AccordionContent>{faq.answer}</AccordionContent>
-                  </AccordionItem>
-                  
-                ))}
-              </Accordion>
-            
+            <Accordion>
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border border-solid border-gray-300 px-5 py-2 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-6 active"
+                >
+                  <AccordionTrigger className="text-lg">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-lg text-gray-500">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </div>
