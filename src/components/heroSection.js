@@ -43,7 +43,7 @@ const HeroSection = () => {
                   <span className="absolute inset-0 overflow-hidden rounded-full">
                     <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </span>
-                  <div className="relative flex space-x-2 items-center z-4 rounded-full bg-indigo-700 py-3 px-6 ring-1 ring-white/5 hover:ring-indigo-700 hover:bg-indigo-800 transition duration-300">
+                  <div className="relative flex space-x-2 items-center z-4 rounded-full bg-indigo-500 py-3 px-6 ring-1 ring-white/50 hover:ring-indigo-600 hover:bg-indigo-600 transition duration-300">
                     <span className="text-lg">Get started</span>
                     <ArrowRight className="text-white w-8 h-8 transition duration-300 transform hover:scale-110" />
                   </div>
