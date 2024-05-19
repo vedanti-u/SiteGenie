@@ -42,14 +42,8 @@ const Navbar = () => {
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image
-            src="https://flowbite.com/docs/images/logo.svg"
-            height={20}
-            width={20}
-            alt="Flowbite Logo"
-          />
-          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-            Site<span className="text-indigo-600">Genie</span>
+          <span className="self-center text-black text-4xl font-semibold whitespace-nowrap">
+            Site<span className="text-indigo-600">Genie.ai</span>
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -99,7 +93,7 @@ const Navbar = () => {
                   className={`block py-2 px-3 rounded md:p-0 ${
                     item.active
                       ? "text-indigo-500 md:bg-transparent md:text-blue-700 md:dark:text-blue-500 hover:bg-indigo-500 hover:text-indigo-500"
-                      : "text-gray-500 hover:text-indigo-500 md:hover:text-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-indigo-500 md:dark:hover:text-indigo-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                      : "text-slate-900 hover:text-indigo-500 md:hover:text-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-indigo-500 md:dark:hover:text-indigo-500 md:dark:hover:bg-transparent dark:border-gray-700"
                   }`}
                 >
                   {item.label}

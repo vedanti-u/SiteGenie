@@ -21,7 +21,7 @@ const HeroSection = () => {
                 </span>
                 <div className="relative flex space-x-2 items-center z-10 rounded-full bg-white py-2 px-4 ring-1 ring-white/5 hover:ring-indigo-700  transition duration-300">
                   <span className="text-sm text-black">
-                    Introducing SiteGenie
+                  ✨ Introducing SiteGenie
                   </span>
                   <ChevronRight className="text-black w-6 h-6 transition duration-300 transform hover:scale-110" />
                 </div>
