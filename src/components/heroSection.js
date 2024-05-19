@@ -3,90 +3,17 @@
 import "@/styles/globals.css";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import RetroGrid from "./magicui/retro-grid";
-import Link from "next/link";
-import { Icons } from "@/components/icons"
-import { cn } from "@/lib/utils";
-
-
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
+import Navbar from "./navbar";
 const HeroSection = () => {
   return (
     <>
       <div class="relative">
         <div class="relative pt-6 pb-16 sm:pb-24">
           <div class="relative">
-            <div className="mr-4 hidden md:flex">
-              <Link href="/" className="mr-6 flex items-center space-x-2">
-                <Icons.logo className="h-6 w-6" />
-                <span className="hidden font-bold sm:inline-block">
-                  {siteConfig.name}
-                </span>
-              </Link>
-              <nav className="flex items-center gap-4 text-sm lg:gap-6">
-                <Link
-                  href="/docs"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname === "/docs"
-                      ? "text-foreground"
-                      : "text-foreground/60"
-                  )}
-                >
-                  Docs
-                </Link>
-                <Link
-                  href="/docs/components"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname?.startsWith("/docs/components")
-                      ? "text-foreground"
-                      : "text-foreground/60"
-                  )}
-                >
-                  Components
-                </Link>
-                <Link
-                  href="/themes"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname?.startsWith("/themes")
-                      ? "text-foreground"
-                      : "text-foreground/60"
-                  )}
-                >
-                  Themes
-                </Link>
-                <Link
-                  href="/examples"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname?.startsWith("/examples")
-                      ? "text-foreground"
-                      : "text-foreground/60"
-                  )}
-                >
-                  Examples
-                </Link>
-                <Link
-                  href="/blocks"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    pathname?.startsWith("/blocks")
-                      ? "text-foreground"
-                      : "text-foreground/60"
-                  )}
-                >
-                  Blocks
-                </Link>
-                <Link
-                  href={siteConfig.links.github}
-                  className={cn(
-                    "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
-                  )}
-                >
-                  GitHub
-                </Link>
-              </nav>
-            </div>
+            <Navbar />
           </div>
           <RetroGrid />
 
@@ -106,9 +33,9 @@ const HeroSection = () => {
                 unparalleled efficiency and time-saving interactions.
               </p>
               <div className="flex items-center justify-center py-4">
-                <ShimmerButton className="shadow-2xl bg-indigo-600">
+                <ShimmerButton className="shadow-2xl bg-black">
                   <span
-                    className="flex items-center whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg space-x-3"
+                    className="flex items-center whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:to-slate-900/10 lg:text-lg space-x-3"
                     href="/sign-in"
                   >
                     Get Started
