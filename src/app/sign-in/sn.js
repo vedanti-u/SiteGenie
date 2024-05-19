@@ -13,34 +13,6 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaGVtY3V3ZnB4bnludmVpbGphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk5NTMxMTUsImV4cCI6MjAxNTUyOTExNX0.y8HPHiQHoXP0iIWnrgxptJ1X4uvw-ycRmiFNHnndSUM"
 );
 
-const customTheme = {
-  default: {
-    colors: {
-      brand: "black",
-      brandAccent: "white",
-      defaultButtonBackground: "white",
-      defaultButtonBackgroundHover: "black",
-      brandButtonText: "white",
-    },
-  },
-  dark: {
-    colors: {
-      brandButtonText: "white",
-      defaultButtonBackground: "#2e2e2e",
-      defaultButtonBackgroundHover: "black",
-      //..
-    },
-  },
-  // You can also add more theme variations with different names.
-  evenDarker: {
-    colors: {
-      brandButtonText: "white",
-      defaultButtonBackground: "#1e1e1e",
-      defaultButtonBackgroundHover: "#2e2e2e",
-      //..
-    },
-  },
-};
 const Login = () => {
   const { user } = supabase;
 
