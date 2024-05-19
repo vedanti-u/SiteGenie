@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import "../../styles/globals.css";
+import {
+  ArrowLeft,
+  ArrowLeftFromLineIcon,
+  BackpackIcon,
+  SendHorizontalIcon,
+} from "lucide-react";
 const Chatbot = () => {
   const [question, setQuestion] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -75,7 +81,9 @@ const Chatbot = () => {
                   variant="link"
                   className="bg-indigo-600 text-white hover:bg-indigo-600"
                 >
-                  GenieBot
+                  <a href="/user-dashboard">
+                    <ArrowLeft />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -124,25 +132,35 @@ const Chatbot = () => {
             </div>
           </div>
           <div className="chatbot-footer">
-            <div className="relative chatbot-footer px-20">
-              <form className="flex items-center py-2 px-20">
+            <div className="relative chatbot-footer">
+              <form className="flex items-center py-2 px-3">
                 <input
                   type="text"
                   placeholder="Please type here....."
-                  className="flex-1 rounded-lg px-4 py-2 border border-gray-300 pr-12"
+                  className="flex-1 py-2 pb-0 border border-transparent focus:border-white focus:outline-none"
                   id="inputField"
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                 />
-                <button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className="absolute inset-y-0 right-0 flex-shrink-0 bg-indigo-600 text-white rounded-md px-4 py-2 transition duration-300 ease-in-out focus:outline-none focus:ring"
-                  id="submitButton"
-                >
-                  Send
+                <button type="submit" onClick={handleSubmit} id="submitButton">
+                  <SendHorizontalIcon />
                 </button>
               </form>
+            </div>
+            <div className="chatbot-header bg-indigo-600 text-white">
+              <div className="items-center">
+                <div className="flex items-center justify-center">
+                  <Button
+                    variant="primary"
+                    className="bg-indigo-600 text-white hover:bg-indigo-600"
+                  >
+                    Powered by ©
+                    <a href="/" className="font-semibold">
+                      SiteGenie.ai
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
