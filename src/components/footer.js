@@ -2,7 +2,7 @@ import { GithubIcon, TwitterIcon } from "lucide-react";
 const FooterSection = () => {
   return (
     <>
-      <footer class="w-full py-14">
+      <footer class="w-full py-4">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="max-w-3xl mx-auto">
             <a href="/" class="flex justify-center ">
@@ -12,22 +12,22 @@ const FooterSection = () => {
             </a>
             <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
               <li>
-                <a href="#" class=" text-gray-800 hover:text-gray-900">
+                <a href="#" class=" text-black hover:text-gray-900">
                   Products
                 </a>
               </li>
               <li>
-                <a href="#" class=" text-gray-800 hover:text-gray-900">
+                <a href="#" class=" text-black hover:text-gray-900">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" class=" text-gray-800 hover:text-gray-900">
+                <a href="#" class=" text-black hover:text-gray-900">
                   Team
                 </a>
               </li>
               <li>
-                <a href="#" class=" text-gray-800 hover:text-gray-900">
+                <a href="#" class=" text-black hover:text-gray-900">
                   Video Demo
                 </a>
               </li>

@@ -45,7 +45,7 @@ export default function Home() {
     <>
       <div className="h-screen">
         <Internal />
-        <div className="py-10">
+        <div className="py-24">
           <header>
             <div className="max-w-7xl mx-auto px-20">
               <h1 className="text-4xl items-center justify-center text-semibold text-gray-900">
