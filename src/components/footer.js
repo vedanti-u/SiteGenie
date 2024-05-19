@@ -1,5 +1,4 @@
 import { GithubIcon, TwitterIcon } from "lucide-react";
-import SvgLogo from "./chatbotLogo";
 const FooterSection = () => {
   return (
     <>
