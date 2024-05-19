@@ -1,7 +1,6 @@
 "use client";
 import "../style/globals.css";
 import { useState, useRef, useEffect } from "react";
-import SvgLogo from "../../components/chatbotLogo";
 import Image from "next/image";
 
 const Preview = () => {
@@ -15,7 +14,6 @@ const Preview = () => {
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
-                  <SvgLogo />
                   <span
                     className="ml-2 font-bold text-indigo-700"
                     style={{ fontSize: "2em" }}

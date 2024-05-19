@@ -4,7 +4,6 @@ import FAQ_E from "../components/faqs";
 import CTA from "@/components/cta-section";
 import "@/styles/globals.css";
 import FooterSection from "@/components/footer";
-import Trustedcompany from "@/components/trustedcompany";
 import FeatureSection from "@/components/features";
 
 export default function Page() {

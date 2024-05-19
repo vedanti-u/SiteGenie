@@ -1,19 +1,11 @@
 "use client";
 import "../../styles/globals.css";
-import SvgLogo from "../../components/chatbotLogo";
 import { Button } from "@/components/ui/button";
 import Create from "@/components/createChatbot";
 import { useState, useRef, useEffect, useMemo } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
 import React from "react";
-import {
-  BentoGrid,
-  BentoGridItem,
-  assignColors,
-  backgroundColors,
-  BentoGridDemo,
-} from "../../components/ui/bento-grid";
 
 const create = {
   tiers: [
@@ -81,7 +73,6 @@ export default function Home() {
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
-                  <SvgLogo />
                   <span className="text-4xl ml-2 font-bold text-indigo-700">
                     SiteGenie
                   </span>
