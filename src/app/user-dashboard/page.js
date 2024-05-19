@@ -2,14 +2,10 @@
 import "../../styles/globals.css";
 import { Button } from "@/components/ui/button";
 import Create from "@/components/createChatbot";
-import { useState, useRef, useEffect, useMemo } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import Image from "next/image";
 import React from "react";
-import { IconSignatureOff } from "@tabler/icons-react";
-import { LogOut } from "lucide-react";
 import FooterSection from "@/components/footer";
-import Internal from "@/components/internalnavbar";
+import InternalNavbar from "@/components/internalnavbar";
 
 const create = {
   tiers: [
@@ -39,18 +35,16 @@ function classNames(...classes) {
 }
 
 export default function Home() {
-
-
   return (
     <>
       <div className="h-screen">
-        <Internal />
+        <InternalNavbar />
         <div className="py-24">
           <header>
-            <div className="max-w-7xl mx-auto px-20">
-              <h1 className="text-4xl items-center justify-center text-semibold text-gray-900">
-                Dashboard
-              </h1>
+            <div className="max-w-7xl mx-auto px-20 pb-10">
+              <h2 class="text-4xl font-semibold text-gray-900 text-center mb-4">
+                Dashboard{" "}
+              </h2>
               <div className="border border-gray-200 rounded-lg h-15 flex justify-between items-center shadow-lg p-4 bg-white">
                 <p className="text-xl text-gray-700 dark:text-gray-700">
                   To create a chatbot click on below button
@@ -90,7 +84,7 @@ export default function Home() {
           <main>
             <section class="py-10 pb-0">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h2 class="font-manrope text-4xl font-bold text-gray-900 text-center mb-14">
+                <h2 class="text-4xl font-semibold text-gray-900 text-center mb-14">
                   Our popular blogs
                 </h2>
                 <div class="flex justify-center mb-14 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
@@ -160,4 +154,3 @@ export default function Home() {
     </>
   );
 }
- 
