@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import ShimmerButton from "./magicui/shimmer-button";
-
+import { useEffect, useState } from "react";
 const navItems = [
   { href: "#", label: "Home", active: true },
   { href: "#", label: "About" },
@@ -11,8 +11,32 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+
+      // Check if the user has scrolled down
+      if (scrollTop > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav
+      className={`bg-white bg-opacity-50 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-200 ${
+        isScrolled ? "backdrop-blur-md" : ""
+      }`}
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
           href="https://flowbite.com/"
@@ -24,7 +48,7 @@ const Navbar = () => {
             width={20}
             alt="Flowbite Logo"
           />
-          <span className="self-center text-black text-2xl font-semibold whitespace-nowrap">
+          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
             Site<span className="text-indigo-600">Genie</span>
           </span>
         </a>
@@ -67,15 +91,15 @@ const Navbar = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
                   className={`block py-2 px-3 rounded md:p-0 ${
                     item.active
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-blue-500 hover:bg-indigo-500 hover:text-indigo-500"
-                      : "text-gray-500 md:hover:bg-indigo-500 hover:text-indigo-500 md:hover:text-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-indigo-500 md:dark:hover:text-indigo-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                      ? "text-indigo-500 md:bg-transparent md:text-blue-700 md:dark:text-blue-500 hover:bg-indigo-500 hover:text-indigo-500"
+                      : "text-gray-500 hover:text-indigo-500 md:hover:text-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-indigo-500 md:dark:hover:text-indigo-500 md:dark:hover:bg-transparent dark:border-gray-700"
                   }`}
                 >
                   {item.label}
