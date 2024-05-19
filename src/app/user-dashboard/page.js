@@ -9,6 +9,7 @@ import React from "react";
 import { IconSignatureOff } from "@tabler/icons-react";
 import { LogOut } from "lucide-react";
 import FooterSection from "@/components/footer";
+import Internal from "@/components/internalnavbar";
 
 const create = {
   tiers: [
@@ -38,82 +39,12 @@ function classNames(...classes) {
 }
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const signOut = () => {
-    // Add sign out logic here
-    console.log("User signed out");
-  };
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   return (
     <>
       <div className="h-screen">
-        <nav className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              <div className="flex">
-                <div className="flex-shrink-0 flex items-center">
-                  <span className="text-4xl ml-2 font-bold text-indigo-700">
-                    SiteGenie
-                  </span>
-                </div>
-              </div>
-              <div
-                className="hidden sm:ml-6 sm:flex sm:items-center relative"
-                ref={dropdownRef}
-              >
-                <div
-                  className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden cursor-pointer"
-                  onClick={toggleDropdown}
-                >
-                  <Image
-                    src="/path_to_user_profile_image.jpg"
-                    alt="User Profile"
-                    className="w-full h-full object-cover"
-                    width={12}
-                    height={12}
-                  />
-                </div>
-
-                {isOpen && (
-                  <div className="absolute right-0 mt-20 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                    <button
-                      onClick={signOut}
-                      className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                    >
-                      <span>Sign Out</span>
-
-                      <LogOut />
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </nav>
+        <Internal />
         <div className="py-10">
           <header>
             <div className="max-w-7xl mx-auto px-20">
@@ -229,3 +160,4 @@ export default function Home() {
     </>
   );
 }
+ 
