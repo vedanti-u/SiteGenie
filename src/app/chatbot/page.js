@@ -3,7 +3,14 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import "../../styles/globals.css";
-import { ArrowLeft, BotIcon, SendHorizontalIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  BotIcon,
+  LoaderCircleIcon,
+  SendHorizontalIcon,
+  User2Icon,
+} from "lucide-react";
+import Tempchatlogo from "@/components/tempchatlogo";
 
 const Chatbot = () => {
   const [question, setQuestion] = useState("");
@@ -70,7 +77,7 @@ const Chatbot = () => {
     <>
       <main className="items-center justify-center h-screen">
         <section className="flex flex-col w-full h-full">
-          <div className="chatbot-header bg-indigo-600 text-white py-3">
+          <nav className="chatbot-header bg-indigo-600 text-white py-3 fixed top-0 w-full z-50">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Button
@@ -87,33 +94,45 @@ const Chatbot = () => {
                 </Button>
               </div>
             </div>
-          </div>
-
-          <div className="flex-1 relative overflow-y-auto my-4 md:my-6">
+          </nav>
+          <div className="flex-1 relative overflow-y-auto h-full my-4 pb-0 md:my-6">
             <div className="block mt-4 md:mt-6 pb-[7px] clear-both">
+              <div className="pt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                    <Tempchatlogo className="text-white" />
+                  </div>
+                  <span className="bg-slate-700 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                    Hello, how can I assist you today?
+                  </span>
+                </div>
+              </div>
+
               {isLoading ? (
                 <>
-                  <div
+                  {/* <div
                     className="flex justify-end"
-                    key={chatLog.length} // Use a unique key to force re-render
+                    key={chatLog.length + 1} // Use a unique key to force re-render
                   >
                     <div className="bg-indigo-600 text-white rounded-lg p-2 max-w-sm">
                       {question}
                     </div>
+                  </div> */}
+                  <div className="py-1">
+                    <button
+                      disabled
+                      type="button"
+                      className="text-white bg-slate-600 rounded-t-full rounded-b-full p-3 max-w-sm"
+                    >
+                      Loading...
+                    </button>
                   </div>
-                  <button
-                    disabled
-                    type="button"
-                    class="text-white bg-gray-500  rounded-lg p-4 max-w-sm"
-                  >
-                    Loading...
-                  </button>
                 </>
               ) : (
                 chatLog.map((message, index) => (
                   <div
                     key={index}
-                    className={`flex ${
+                    className={`flex space-x-2 py-1 ${
                       message.type === "user" ? "justify-end" : "justify-start"
                     }`}
                   >
@@ -121,28 +140,37 @@ const Chatbot = () => {
                       className={`${
                         message.type === "user"
                           ? "bg-indigo-600 text-white"
-                          : "bg-gray-500 text-white"
-                      } rounded-lg p-4 max-w-sm`}
+                          : "bg-slate-600 text-white"
+                      } rounded-t-full rounded-b-full p-3 max-w-sm`}
                     >
                       {message.message}
+                    </div>
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                      <User2Icon className="text-white" />
                     </div>
                   </div>
                 ))
               )}
             </div>
           </div>
-          <div className="chatbot-footer">
+
+          <div className="chatbot-footer border-t border-gray-200">
             <div className="relative chatbot-footer">
-              <form className="flex items-center py-2 px-3">
+              <form className="flex items-center pb-1 px-3">
                 <input
                   type="text"
                   placeholder="Please type here....."
-                  className="flex-1 py-2 pb-0 border border-transparent focus:border-white focus:outline-none"
+                  className="flex-1 py-1 border border-transparent focus:border-white focus:outline-none"
                   id="inputField"
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                 />
-                <button type="submit" onClick={handleSubmit} id="submitButton">
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  id="submitButton"
+                  className="ml-2"
+                >
                   <SendHorizontalIcon />
                 </button>
               </form>
