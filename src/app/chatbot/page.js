@@ -11,6 +11,7 @@ import {
   User2Icon,
 } from "lucide-react";
 import Tempchatlogo from "@/components/tempchatlogo";
+import Loadingsvg from "./loadingsvg";
 
 const Chatbot = () => {
   const [question, setQuestion] = useState("");
@@ -119,10 +120,11 @@ const Chatbot = () => {
                       message.type === "user"
                         ? "bg-indigo-600 text-white"
                         : "bg-slate-600 text-white"
-                    } rounded-t-full justify-content rounded-b-full p-3 max-w-sm`}
+                    } rounded-t-full rounded-b-full p-3 max-w-sm text-justify break-words`}
                   >
                     {message.message}
                   </div>
+
                   <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
                     <User2Icon className="text-white" />
                   </div>
@@ -135,8 +137,8 @@ const Chatbot = () => {
                     <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
                       <Tempchatlogo className="text-white" />
                     </div>
-                    <span className="bg-slate-700 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
-                      Loading...
+                    <span className="bg-white text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                      <Loadingsvg />
                     </span>
                   </div>
                 </div>
