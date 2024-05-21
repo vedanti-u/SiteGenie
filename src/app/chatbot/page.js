@@ -107,49 +107,39 @@ const Chatbot = () => {
                   </span>
                 </div>
               </div>
-
-              {isLoading ? (
-                <>
-                  {/* <div
-                    className="flex justify-end"
-                    key={chatLog.length + 1} // Use a unique key to force re-render
-                  >
-                    <div className="bg-indigo-600 text-white rounded-lg p-2 max-w-sm">
-                      {question}
-                    </div>
-                  </div> */}
-                  <div className="py-1">
-                    <button
-                      disabled
-                      type="button"
-                      className="text-white bg-slate-600 rounded-t-full rounded-b-full p-3 max-w-sm"
-                    >
-                      Loading...
-                    </button>
-                  </div>
-                </>
-              ) : (
-                chatLog.map((message, index) => (
+              {chatLog.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex space-x-2 py-1 ${
+                    message.type === "user" ? "justify-end" : "justify-start"
+                  }`}
+                >
                   <div
-                    key={index}
-                    className={`flex space-x-2 py-1 ${
-                      message.type === "user" ? "justify-end" : "justify-start"
-                    }`}
+                    className={`${
+                      message.type === "user"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-slate-600 text-white"
+                    } rounded-t-full justify-content rounded-b-full p-3 max-w-sm`}
                   >
-                    <div
-                      className={`${
-                        message.type === "user"
-                          ? "bg-indigo-600 text-white"
-                          : "bg-slate-600 text-white"
-                      } rounded-t-full rounded-b-full p-3 max-w-sm`}
-                    >
-                      {message.message}
-                    </div>
-                    <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
-                      <User2Icon className="text-white" />
-                    </div>
+                    {message.message}
                   </div>
-                ))
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                    <User2Icon className="text-white" />
+                  </div>
+                </div>
+              ))}
+
+              {isLoading && (
+                <div className="flex justify-start py-1">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                      <Tempchatlogo className="text-white" />
+                    </div>
+                    <span className="bg-slate-700 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                      Loading...
+                    </span>
+                  </div>
+                </div>
               )}
             </div>
           </div>
