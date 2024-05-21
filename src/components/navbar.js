@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -40,15 +40,13 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center text-black text-4xl font-semibold whitespace-nowrap">
+        <a href="/" className="flex items-center space-x-3 ">
+          <span className="self-center text-black text-lg ">
             Site<span className="text-indigo-600">Genie.ai</span>
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <ShimmerButton
-            className="shadow-2xl bg-indigo-600 py-3"
-          >
+          <ShimmerButton className="shadow-2xl bg-indigo-600 py-3">
             <a
               className="flex items-center whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:to-slate-900/10 space-x-3"
               href="/sign-in"
@@ -86,7 +84,7 @@ const Navbar = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 text-lg border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a

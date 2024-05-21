@@ -42,11 +42,11 @@ export default function Home() {
         <div className="py-24">
           <header>
             <div className="max-w-7xl mx-auto px-20 pb-10">
-              <h2 class="text-4xl font-semibold text-gray-900 text-center mb-4">
+              <h2 class="text-5xl text-gray-900 text-center mb-4">
                 Dashboard{" "}
               </h2>
               <div className="border border-gray-200 border-dotted rounded-lg h-auto flex flex-col justify-center items-center shadow-lg p-6 bg-white mx-auto">
-                <p className="text-xl text-gray-700 dark:text-gray-700 mb-4 text-center items-center justify-center pb-">
+                <p className="text-lg text-gray-700 dark:text-gray-700 mb-4 text-center items-center justify-center pb-">
                   To create a chatbot, click on the button below
                 </p>
                 <Dialog>
