@@ -18,12 +18,12 @@ const HeroSection = () => {
           >
             <main className="relative mx-auto max-w-12xl px-4 ">
               <div className="text-center space-y-2 pt-24">
-                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white bg-transparent">
-                  <span className="font-inter text-xs font-medium text-gray-900 ml-3">
+                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white hover:bg-indigo-50 bg-transparent">
+                  <span className=" text-xs font-medium text-gray-900 ml-3">
                     Introducing SiteGenie
                   </span>
                   <a
-                    href="javascript:;"
+                    href="/sign-in"
                     className="w-8 h-8 rounded-full flex justify-center items-center bg-indigo-600"
                   >
                     <svg

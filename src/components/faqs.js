@@ -9,15 +9,14 @@ import "@/styles/globals.css";
 const faqs = [
   {
     question:
-      "Is there a demo available for testing the chatbot on the sitegpt.ai website?",
+      "Is there a demo available for testing the chatbot on the SiteGenie.ai website?",
     answer:
-      "Yes, you can try out the demo. The demo bot is trained on the sitegpt.ai website content, allowing you to ask questions related to the website for answers.",
+      "Yes, you can try out the demo. The demo bot is trained on the SiteGenie.ai  website content, allowing you to ask questions related to the website for answers.",
   },
   {
-    question:
-      "How can I effectively train the chatbot using a website link, sitemap link, or Gitbook link?",
+    question: "How can I effectively train the chatbot using a website link?",
     answer:
-      "Train the chatbot by providing a website link, sitemap link, or Gitbook link. Simply input a URL, and the chatbot will learn from all the content on that page.",
+      "Train the chatbot by providing a website link . Simply input a URL, and the chatbot will learn from all the content on that page.",
   },
   {
     question:
@@ -45,19 +44,18 @@ function classNames(...classes) {
 
 export default function FAQ_E() {
   return (
-    <section class="py-24">
+    <section class="pt-28 pb-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <h2 class="text-5xl text-center text-gray-900 leading-[3.25rem]">
             Frequently asked questions
           </h2>
-          {/* <div className="text-lg mb-4 py-4 text-center text-gray-600">
-            <p>
-              Here are a few of the questions we get the most. If you dont see
-              whats on your mind, reach out to us anytime on phone, chat, or
-              email.
+          <div className="text-lg mb-4 py-4 text-center text-gray-600">
+            <p className="text-lg text-gray-500 max-w-md md:max-w-2xl mx-auto">
+              Here are a few of the questions we get the most. If you don`t see
+              whats on your mind, reach out to us anytime on email.
             </p>
-          </div> */}
+          </div>
         </div>
         <div class="accordion-group" data-accordion="default-accordion">
           <div class="accordion " id="basic-heading-one-with-icon">

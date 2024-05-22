@@ -3,19 +3,17 @@ import "@/styles/globals.css";
 const CTA = () => {
   return (
     <>
-      <section class="py-16">
+      <section class="py-10">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="lg:py-14 lg:px-20 p-10 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 flex items-center justify-between flex-col lg:flex-row">
             <div class="block text-center mb-5 lg:text-left lg:mb-0">
-              <h2 class="font-manrope text-4xl text-white font-semibold mb-5 lg:mb-2">
-                Connect with us
-              </h2>
-              <p class="text-xl text-indigo-100">
-                Contact us with any query or any idea.
+              <h2 class="text-5xl text-white mb-5 lg:mb-2">Connect with us</h2>
+              <p class="text-lg text-indigo-100">
+                Always ready for any kind of feedback{" "}
               </p>
             </div>
             <a
-              href="#"
+              href="https://github.com/vedanti-u/site-frontend"
               class="flex items-center gap-2 bg-white rounded-full shadow-sm text-lg text-indigo-600 font-semibold py-4 px-8 transition-all duration-500"
             >
               Get In Touch
