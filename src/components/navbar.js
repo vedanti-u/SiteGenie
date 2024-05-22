@@ -39,21 +39,19 @@ const Navbar = () => {
         isScrolled ? "backdrop-blur-md" : ""
       }`}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 ">
-          <span className="self-center text-black text-lg ">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+        <a href="/" className="flex items-center space-x-3">
+          <span className="self-center text-black text-lg">
             Site<span className="text-indigo-600">Genie.ai</span>
           </span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div class="flex lg:items-center justify-start flex-col lg:flex-row max-lg:gap-4 lg:flex-1 lg:justify-end">
-            <button class="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
-              Login
-            </button>
-            <button class="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm lg:ml-5 hover:bg-indigo-700">
-              Sign up
-            </button>
-          </div>
+        <div className="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse md:order-2">
+          <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
+            Login
+          </button>
+          <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-700">
+            Sign up
+          </button>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -78,8 +76,8 @@ const Navbar = () => {
               />
             </svg>
           </button>
-        </div>
-        {/* <div
+          {/* </div>
+        <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
@@ -98,8 +96,8 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-          </ul>
-        </div> */}
+          </ul> */}
+        </div>
       </div>
     </nav>
   );
