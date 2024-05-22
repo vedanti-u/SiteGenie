@@ -78,73 +78,7 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <main>
-          <section class="py-10 pb-0">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 class="text-4xl font-semibold text-gray-900 text-center mb-14">
-                Our popular Bots
-              </h2>
-              <div class="flex justify-center mb-14 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
-                <div class="group cursor-pointer w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://pagedone.io/asset/uploads/1696244553.png"
-                      alt="Harsh image"
-                      className="rounded-lg w-full"
-                    ></img>
-                  </div>
-                  <div class="block">
-                    <h4 class="text-gray-900 font-medium leading-8 mb-9">
-                      Fintech 101: Exploring the Basics of Electronic Payments
-                    </h4>
-                    <div class="flex items-center justify-between  font-medium">
-                      <h6 class="text-sm text-gray-500">By Harsh C.</h6>
-                      <span class="text-sm text-indigo-600">2 year ago</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="group cursor-pointer w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://pagedone.io/asset/uploads/1696244579.png"
-                      alt="John image"
-                      class="rounded-lg w-full"
-                    ></img>
-                  </div>
-                  <div class="block">
-                    <h4 class="text-gray-900 font-medium leading-8 mb-9">
-                      From Classroom to Cyberspace: The Growing Influence of
-                      EdTech in Fintech
-                    </h4>
-                    <div class="flex items-center justify-between  font-medium">
-                      <h6 class="text-sm text-gray-500">By John D.</h6>
-                      <span class="text-sm text-indigo-600">2 year ago</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="group cursor-pointer w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://pagedone.io/asset/uploads/1696244619.png"
-                      alt="Alexa image"
-                      class="rounded-lg w-full"
-                    ></img>
-                  </div>
-                  <div class="block">
-                    <h4 class="text-gray-900 font-medium leading-8 mb-9">
-                      Fintech Solutions for Student Loans: Easing the Burden of
-                      Education Debt
-                    </h4>
-                    <div class="flex items-center justify-between  font-medium">
-                      <h6 class="text-sm text-gray-500">By Alexa H.</h6>
-                      <span class="text-sm text-indigo-600">2 year ago</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
+       
         <FooterSection />
       </div>
     </>

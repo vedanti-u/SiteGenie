@@ -39,39 +39,55 @@ const Login = () => {
   }, [user]);
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-96 p-4 border border-gray-300 rounded-lg bg-white shadow-md">
-        <Auth
-          supabaseClient={supabase}
-          theme="default"
-          appearance={{
-            style: {
-              button: {
-                background: "black",
-                color: "white",
-                fontSize: "1.2rem", // Increase font size
-                padding: "0.75rem 1.5rem",
-                borderRadius: "0.5rem", // Curved corners
-                boxShadow:
-                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
+    <div className="flex h-screen">
+      {/* Left half */}
+      <div className="w-1/2 bg-indigo-600 flex flex-col justify-center items-center h-screen">
+        <div className="text-center mb-8">
+          <span className="text-5xl text-white">SiteGenie</span>
+        </div>
+        <div className="text-white text-lg self-end justify-center ml-4 mb-4">
+          This next generation of AI will reshape every software category and
+          every business, including our own. Although this new era promises
+          great opportunity, it demands even greater responsibility from
+          companies like ours.
+        </div>
+        <div className="text-white text-lg self-end mr-4">~ Satya Nadella</div>
+      </div>
+
+      {/* Right half */}
+      <div className="w-1/2 flex justify-center items-center">
+        <div className="w-96 p-8">
+          <Auth
+            supabaseClient={supabase}
+            theme="default"
+            appearance={{
+              style: {
+                button: {
+                  background: "#4F46E5", // Indigo-600
+                  color: "white",
+                  fontSize: "1rem", // Increase font size
+                  padding: "0.75rem 1.5rem",
+                  borderRadius: "0.5rem", // Curved corners
+                  boxShadow:
+                    "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
+                },
+                anchor: { color: "black" },
+                label: { fontSize: "1.2rem" }, // Increase font size
+                input: {
+                  fontSize: "1rem", // Increase font size
+                  color: "grey", // Light font color
+                  height: "2.5rem", // Reduced height
+                  borderRadius: "0.5rem", // Curved corners
+                  boxShadow:
+                    "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
+                  borderColor: "#D1D5DB", // Light border color
+                  padding: "0.5rem 1.5rem", // Adjust padding for reduced height
+                },
               },
-              anchor: { color: "black" },
-              label: {
-                fontSize: "1.5rem", // Increase font size
-              },
-              input: {
-                fontSize: "1.2rem", // Increase font size
-                color: "grey", // Light font color
-                borderRadius: "0.5rem", // Curved corners
-                boxShadow:
-                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
-                borderColor: "#D1D5DB", // Light border color
-                padding: "0.9rem 1.5rem", // Adjust padding for increased size
-              },
-            },
-          }}
-          providers={["google"]}
-        />
+            }}
+            providers={["google"]}
+          />
+        </div>
       </div>
     </div>
   );
