@@ -43,16 +43,16 @@ export default function FAQ_E() {
     <section class="py-15">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
-          <h2 class="text-4xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
+          <h2 class="text-5xl text-center text-gray-900 leading-[3.25rem]">
             Frequently asked questions
           </h2>
-          <div className="mb-4 py-4 text-center text-gray-600">
+          {/* <div className="text-lg mb-4 py-4 text-center text-gray-600">
             <p>
               Here are a few of the questions we get the most. If you dont see
               whats on your mind, reach out to us anytime on phone, chat, or
               email.
             </p>
-          </div>
+          </div> */}
         </div>
         <div class="accordion-group" data-accordion="default-accordion">
           <div class="accordion " id="basic-heading-one-with-icon">
