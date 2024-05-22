@@ -5,12 +5,12 @@ import { ChevronRight } from "lucide-react";
 import ShimmerButton from "./magicui/shimmer-button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-const navItems = [
-  { href: "#", label: "Home", active: true },
-  { href: "#", label: "About" },
-  { href: "#", label: "Services" },
-  { href: "#", label: "Github" },
-];
+// const navItems = [
+//   { href: "#", label: "Home", active: true },
+//   { href: "#", label: "About" },
+//   { href: "#", label: "Services" },
+//   { href: "#", label: "Github" },
+// ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,15 +46,14 @@ const Navbar = () => {
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <ShimmerButton className="shadow-2xl bg-indigo-600 py-3">
-            <a
-              className="flex items-center whitespace-pre-wrap text-center font-medium leading-none tracking-tight text-white dark:to-slate-900/10 space-x-3"
-              href="/sign-in"
-            >
-              <span>SignIn</span>
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </ShimmerButton>
+          <div class="flex lg:items-center justify-start flex-col lg:flex-row max-lg:gap-4 lg:flex-1 lg:justify-end">
+            <button class="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
+              Login
+            </button>
+            <button class="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm lg:ml-5 hover:bg-indigo-700">
+              Sign up
+            </button>
+          </div>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -80,7 +79,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div
+        {/* <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
@@ -100,7 +99,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
