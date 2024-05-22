@@ -57,7 +57,7 @@ const HeroSection = () => {
                   href="/sign-in"
                   class="w-full md:w-auto mb-14 inline-flex items-center justify-center py-3 px-7 text-base font-semibold text-center text-white rounded-full bg-indigo-600 shadow-xs hover:bg-indigo-700 transition-all duration-500"
                 >
-                  Create an account
+                  Get started
                   <svg
                     class="ml-2"
                     width="20"

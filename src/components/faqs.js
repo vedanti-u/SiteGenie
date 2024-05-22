@@ -8,29 +8,34 @@ import {
 import "@/styles/globals.css";
 const faqs = [
   {
-    question: "Is there a demo that I can try?",
+    question:
+      "Is there a demo available for testing the chatbot on the sitegpt.ai website?",
     answer:
-      "Yes, you can go and try out the demo. The demo bot you see is trained on the sitegpt.ai website content itself. So you can ask any questions related to the website in that demo bot and it will answer it.",
+      "Yes, you can try out the demo. The demo bot is trained on the sitegpt.ai website content, allowing you to ask questions related to the website for answers.",
   },
   {
-    question: "How do I train the chatbot?",
+    question:
+      "How can I effectively train the chatbot using a website link, sitemap link, or Gitbook link?",
     answer:
-      "You can train the chatbot by adding a website link, a sitemap link, or a Gitbook link. Just enter a URL, and the chatbot will be trained on all the content present on that URL.",
+      "Train the chatbot by providing a website link, sitemap link, or Gitbook link. Simply input a URL, and the chatbot will learn from all the content on that page.",
   },
   {
-    question: "How long does the training take?",
+    question:
+      "What is the typical duration for training the chatbot based on the number of pages being trained?",
     answer:
-      "It depends on the number of pages you are training, but usually, it should be done within a few minutes.",
+      "The training time varies based on the number of pages being trained, but usually completes within a few minutes.",
   },
   {
-    question: "What type of content can we use to train the chatbot?",
+    question:
+      "What kinds of content are suitable for training the chatbot to enhance its ability to respond to queries?",
     answer:
-      "You can use any type of content to train the chatbot. The more content you provide, the better the chatbot will be able to answer the questions.",
+      "Any type of content can be used to train the chatbot. The more diverse the content, the better the chatbot's ability to respond to queries.",
   },
   {
-    question: "Can you embed a chatbot on multiple websites?",
+    question:
+      "Can the chatbot be integrated across multiple websites to engage visitors effectively?",
     answer:
-      "Yes, youre able to add any chatbot to any number of sites that you want visitors to interact with.",
+      "Yes, you can embed the chatbot on numerous websites to engage visitors across various platforms.",
   },
 ];
 
@@ -40,7 +45,7 @@ function classNames(...classes) {
 
 export default function FAQ_E() {
   return (
-    <section class="py-15">
+    <section class="py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <h2 class="text-5xl text-center text-gray-900 leading-[3.25rem]">
