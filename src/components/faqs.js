@@ -45,7 +45,7 @@ function classNames(...classes) {
 
 export default function FAQ_E() {
   return (
-    <section class="py-20">
+    <section class="py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <h2 class="text-5xl text-center text-gray-900 leading-[3.25rem]">

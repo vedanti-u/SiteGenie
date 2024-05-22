@@ -14,13 +14,13 @@ const HeroSection = () => {
           <Navbar />
           <div
             className="relative bg-cover bg-center p-0"
-            style={{ backgroundImage: `url(${BgImage.src})` }}
+            // style={{ backgroundImage: `url(${BgImage.src})` }}
           >
             <main className="relative mx-auto max-w-12xl px-4 ">
               <div className="text-center space-y-2 pt-24">
-                <div className="border border-indigo-600 p-1 w-60 mx-auto rounded-full flex items-center justify-between mb-4 bg-white bg-transparent">
+                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white bg-transparent">
                   <span className="font-inter text-xs font-medium text-gray-900 ml-3">
-                    Explore how to use for brands.
+                    Introducing SiteGenie
                   </span>
                   <a
                     href="javascript:;"

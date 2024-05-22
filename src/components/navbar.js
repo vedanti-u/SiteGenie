@@ -39,13 +39,13 @@ const Navbar = () => {
         isScrolled ? "backdrop-blur-md" : ""
       }`}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3">
           <span className="self-center text-black text-lg">
             Site<span className="text-indigo-600">Genie.ai</span>
           </span>
         </a>
-        <div className="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse md:order-2">
+        <div className="flex items-center space-x-3 md:space-x-3 rtl:space-x-reverse md:order-2">
           <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
             Login
           </button>

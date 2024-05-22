@@ -5,13 +5,16 @@ import CTA from "@/components/cta-section";
 import "@/styles/globals.css";
 import FooterSection from "@/components/footer";
 import FeatureSection from "@/components/features";
+import Teamsection from "@/components/teamsection";
 
 export default function Page() {
   return (
-    <div className="relative mx-5">
+    <div className="relative p-5">
       <HeroSection />
       <FeatureSection />
+
       <FAQ_E />
+      <Teamsection />
       <CTA />
       <FooterSection />
     </div>
