@@ -67,7 +67,7 @@ export default function FAQ_E() {
                   value={`item-${index}`}
                   className="border border-solid border-gray-300 px-5 py-2 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-6 active"
                 >
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg hover:text-indigo-600">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-lg text-gray-500">
