@@ -2,10 +2,7 @@
 "use client";
 import "@/styles/globals.css";
 import Navbar from "./navbar";
-import Image from "next/image";
-import BgImage from "../../public/bg-hero.png";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import HeroBack from "./ui/heroback";
+
 const HeroSection = () => {
   return (
     <>

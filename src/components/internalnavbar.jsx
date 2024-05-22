@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { LogOutIcon } from "lucide-react";
-import ShimmerButton from "./magicui/shimmer-button";
 import { useEffect, useState ,useRef} from "react";
 
 const InternalNavbar = () => {

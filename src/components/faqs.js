@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import "@/styles/globals.css";
+
 const faqs = [
   {
     question:

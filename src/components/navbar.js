@@ -1,14 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-// const navItems = [
-//   { href: "#", label: "Home", active: true },
-//   { href: "#", label: "About" },
-//   { href: "#", label: "Services" },
-//   { href: "#", label: "Github" },
-// ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
