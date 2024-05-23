@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { ChevronRight } from "lucide-react";
 const Create = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -197,29 +198,38 @@ const Create = () => {
               Loading...
             </Button>
           ) : (
-            <div className="px-4 py-2 flex space-x-6">
-              <Button
-                variant="primary"
-                onClick={fetchUpdateData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
-              >
-                Update
-              </Button>
-              <Button
-                variant="primary"
-                onClick={fetchDeleteData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
-              >
-                Delete
-              </Button>
+            <>
+              <div className="px-4 py-2 flex space-x-6">
+                <Button
+                  variant="primary"
+                  onClick={fetchUpdateData}
+                  className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                >
+                  Update
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={fetchDeleteData}
+                  className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                >
+                  Delete
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={fetchData}
+                  className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                >
+                  Generate Chatbot
+                </Button>
+              </div>
               <Button
                 variant="primary"
                 onClick={fetchData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
-                Generate Chatbot
+                Direct to chatbot <ChevronRight />
               </Button>
-            </div>
+            </>
           )}
           <ToastContainer />
         </div>

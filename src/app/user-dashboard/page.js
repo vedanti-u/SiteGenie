@@ -74,9 +74,9 @@ export default function Home() {
                   </DialogContent>
                 </Dialog>
 
-                <h3 className="ml-4 my-0 py-0 text-xl font-semibold text-gray-900">
-                  Create New
-                </h3>
+                <span className="ml-4 my-0 py-0 text-lg text-gray-900">
+                  Create new Chatbot
+                </span>
               </div>
 
               <div className="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">

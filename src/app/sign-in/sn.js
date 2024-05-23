@@ -51,7 +51,7 @@ const Login = () => {
           appearance={{
             style: {
               button: {
-                background: "black",
+                background: "purple",
                 color: "white",
                 fontSize: "1rem", // Increase font size
                 padding: "0.75rem 1.5rem",
