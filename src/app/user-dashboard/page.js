@@ -38,49 +38,91 @@ export default function Home() {
   return (
     <>
       <InternalNavbar />
-      <div className="py-24">
-        <header>
-          <div className="max-w-7xl mx-auto px-20 pb-10">
-            <h2 class="text-5xl text-gray-900 text-center mb-4">Dashboard </h2>
-            <div className="border border-gray-200 border-dotted rounded-lg h-auto flex flex-col justify-center items-center shadow-lg p-6 bg-white mx-auto">
-              <p className="text-lg text-gray-700 dark:text-gray-700 mb-4 text-center items-center justify-center pb-">
-                To create a chatbot, click on the button below
-              </p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="primary"
-                    className="bg-indigo-600 text-white h-12 py-4 px-6 text-lg rounded-md shadow-lg hover:bg-indigo-700"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <svg
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+      <main>
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          {/* Replace with your content */}
+          <div className="px-4 py-28 sm:px-0">
+            <span className="text-black text-5xl">Dashboard</span>
+            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 mt-8">
+              {" "}
+              {/* Added mt-8 */}
+              <div className="m-8 relative p-2 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-80 b text-indigo-700 hover:shadow-lg">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="flex items-center px-4 space-x-6">
+                      <span className="text-xl s text-">
+                        Create new Chatbot
+                      </span>
+                      <button
+                        type="button"
+                        className="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
-                        <path
-                          clipRule="evenodd"
-                          d="M10.4269 2.42148C11.4003 1.85951 12.5996 1.8595 13.573 2.42148L19.5087 5.84848C20.4821 6.41046 21.0817 7.44904 21.0817 8.573V15.427C21.0817 16.551 20.4821 17.5895 19.5087 18.1515L13.573 21.5785C12.5996 22.1405 11.4003 22.1405 10.4269 21.5785L4.49122 18.1515C3.51784 17.5895 2.91821 16.551 2.91821 15.427V8.573C2.91821 7.44904 3.51784 6.41046 4.49122 5.84848L10.4269 2.42148ZM15.75 12C15.75 12.4142 15.4142 12.75 15 12.75H12.75V15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15V12.75H9C8.58579 12.75 8.25 12.4142 8.25 12C8.25 11.5858 8.58579 11.25 9 11.25H11.25V9C11.25 8.58579 11.5858 8.25 12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V11.25H15C15.4142 11.25 15.75 11.5858 15.75 12Z"
-                          fill="#ffffff"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                      <span>Create new</span>
+                        <svg
+                          className="h-6 w-6"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                          />
+                        </svg>
+                      </button>
                     </div>
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
-                  <Create />
-                </DialogContent>
-              </Dialog>
+                  </DialogTrigger>
+
+                  <DialogContent className="sm:max-w-md">
+                    <Create />
+                  </DialogContent>
+                </Dialog>
+              </div>
+              <div className="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">
+                <div className="mt-0 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+                  {create.tiers.map((tier) => (
+                    <div
+                      key={tier.title}
+                      className="relative p-6 text-lg bg-white border border-gray-200 rounded-2xl shadow-md flex flex-col hover:shadow-lg"
+                    >
+                      <div className="flex-1">
+                        <h3 className="text-lg text-indigo-500">
+                          {tier.title}
+                        </h3>
+                        <p className="mt-4 flex items-baseline text-gray-900">
+                          <span className="text-4xl  tracking-tight">
+                            {tier.price}
+                          </span>
+                        </p>
+                      </div>
+                      <a
+                        href={tier.link} // Use the link property for the href attribute
+                        className={classNames(
+                          tier.mostPopular
+                            ? "bg-indigo-500 text-white hover:bg-indigo-600"
+                            : "bg-indigo-50 text-indigo-700 hover:bg-indigo-100",
+                          "mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium"
+                        )}
+                      >
+                        {tier.cta}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-12">
+              {" "}
+              {/* Added mt-12 for uniform spacing */}
+              <FooterSection />
             </div>
           </div>
-        </header>
-       
-        <FooterSection />
-      </div>
+          {/* /End replace */}
+        </div>
+      </main>
     </>
   );
 }
