@@ -46,11 +46,11 @@ export default function Home() {
             <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 mt-8">
               {" "}
               {/* Added mt-8 */}
-              <div className="m-8 relative p-2 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-80 b text-indigo-700 hover:bg-indigo-100">
+              <div className="m-8 relative p-2 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-80 b text-indigo-700 hover:shadow-lg">
                 <Dialog>
                   <DialogTrigger asChild>
                     <div className="flex items-center px-4 space-x-6">
-                      <span className="text-xl font-semibold text-gray-900">
+                      <span className="text-xl text-black">
                         Create new Chatbot
                       </span>
                       <button
@@ -86,14 +86,14 @@ export default function Home() {
                   {create.tiers.map((tier) => (
                     <div
                       key={tier.title}
-                      className="relative p-6 text-lg bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col"
+                      className="relative p-6 text-lg bg-white border border-gray-200 rounded-2xl shadow-md flex flex-col hover:shadow-lg"
                     >
                       <div className="flex-1">
                         <h3 className="text-lg text-indigo-500">
                           {tier.title}
                         </h3>
                         <p className="mt-4 flex items-baseline text-gray-900">
-                          <span className="text-4xl font-extrabold tracking-tight">
+                          <span className="text-4xl  tracking-tight">
                             {tier.price}
                           </span>
                         </p>

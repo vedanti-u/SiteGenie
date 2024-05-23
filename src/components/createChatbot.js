@@ -157,9 +157,6 @@ const Create = () => {
     <div className="mx-auto w-full max-w-sm">
       <DialogHeader className="bg-white">
         <DialogTitle>Create Chatbot</DialogTitle>
-        <DialogDescription>
-          To create chatbot, enter a valid URL from any website.
-        </DialogDescription>
       </DialogHeader>
       <div className="p-2 pb-8">
         <input
@@ -201,21 +198,21 @@ const Create = () => {
               <Button
                 variant="primary"
                 onClick={fetchUpdateData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Update
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchDeleteData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Delete
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Generate Chatbot
               </Button>
