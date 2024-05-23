@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { LogOutIcon } from "lucide-react";
-import { useEffect, useState ,useRef} from "react";
+import { useEffect, useState, useRef } from "react";
 
 const InternalNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,8 +61,8 @@ const InternalNavbar = () => {
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center text-black text-4xl font-semibold whitespace-nowrap">
-            Site<span className="text-indigo-600">Genie.ai</span>
+          <span className="self-center text-black text-4xl whitespace-nowrap">
+            Site<span className="text-indigo-600">Genie</span>
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

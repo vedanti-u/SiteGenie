@@ -41,6 +41,10 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-96 p-4 border border-gray-300 rounded-lg bg-white shadow-md">
+        <span className="justify-center items-center text-5xl">
+          Site<span className="text-indigo-600">Genie</span>
+        </span>
+        <hr className="my-4 border-gray-300 w-full" /> {/* Add this line */}
         <Auth
           supabaseClient={supabase}
           theme="default"
@@ -49,7 +53,7 @@ const Login = () => {
               button: {
                 background: "black",
                 color: "white",
-                fontSize: "1.2rem", // Increase font size
+                fontSize: "1rem", // Increase font size
                 padding: "0.75rem 1.5rem",
                 borderRadius: "0.5rem", // Curved corners
                 boxShadow:
@@ -57,16 +61,16 @@ const Login = () => {
               },
               anchor: { color: "black" },
               label: {
-                fontSize: "1.5rem", // Increase font size
+                fontSize: "1.2rem", // Increase font size
               },
               input: {
-                fontSize: "1.2rem", // Increase font size
+                fontSize: "1rem", // Increase font size
                 color: "grey", // Light font color
                 borderRadius: "0.5rem", // Curved corners
                 boxShadow:
                   "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
                 borderColor: "#D1D5DB", // Light border color
-                padding: "0.9rem 1.5rem", // Adjust padding for increased size
+                padding: "0.5rem 1rem", // Adjust padding for reduced height
               },
             },
           }}
