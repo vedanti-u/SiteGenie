@@ -10,9 +10,9 @@ import "@/styles/globals.css";
 const faqs = [
   {
     question:
-      "Is there a demo available for testing the chatbot on the SiteGenie.ai website?",
+      "Is there a demo available for testing the chatbot on the SiteGenie website?",
     answer:
-      "Yes, you can try out the demo. The demo bot is trained on the SiteGenie.ai  website content, allowing you to ask questions related to the website for answers.",
+      "Yes, you can try out the demo. The demo bot is trained on the Sippline, AlenterEV  website content, allowing you to ask questions related to the website for answers.",
   },
   {
     question: "How can I effectively train the chatbot using a website link?",
