@@ -47,7 +47,7 @@ const Login = () => {
           appearance={{
             style: {
               button: {
-                background: "blue",
+                background: "purple",
                 color: "white",
                 fontSize: "1rem", // Increase font size
                 padding: "0.75rem 1.5rem",
@@ -55,13 +55,13 @@ const Login = () => {
                 boxShadow:
                   "0 4px 4px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
               },
-              anchor: { color: "blue" },
+              anchor: { color: "black" },
               label: {
                 fontSize: "1.2rem", // Increase font size
               },
               input: {
                 fontSize: "1rem", // Increase font size
-                color: "grey", // Light font color
+                color: "black", // Light font color
                 borderRadius: "0.5rem", // Curved corners
                 boxShadow:
                   "0 4px 4px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
