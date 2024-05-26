@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 const Create = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -201,21 +202,21 @@ const Create = () => {
               <Button
                 variant="primary"
                 onClick={fetchUpdateData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Update
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchDeleteData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Delete
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchData}
-                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Generate Chatbot
               </Button>

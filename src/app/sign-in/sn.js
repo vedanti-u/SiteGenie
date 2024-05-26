@@ -1,5 +1,4 @@
 import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import React from "react";
@@ -33,7 +32,6 @@ const Login = () => {
         });
     }
   }, [user]);
-
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-96 p-4 border border-gray-300 rounded-lg bg-white shadow-md">
