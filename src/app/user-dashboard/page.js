@@ -1,6 +1,5 @@
 "use client";
 import "../../styles/globals.css";
-import { Button } from "@/components/ui/button";
 import Create from "@/components/createChatbot";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import React from "react";
@@ -115,8 +114,6 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-12">
-              {" "}
-              {/* Added mt-12 for uniform spacing */}
               <FooterSection />
             </div>
           </div>

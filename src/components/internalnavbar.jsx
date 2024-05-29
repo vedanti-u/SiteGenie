@@ -2,11 +2,12 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { UserButton } from "@clerk/nextjs";
-
 const InternalNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  // const { userId } = auth();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -68,7 +69,7 @@ const InternalNavbar = () => {
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div className="hidden sm:ml-6 sm:flex sm:items-center bg-black">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center ">
             <UserButton afterSignOutUrl="/" />
           </div>
         </div>
