@@ -2,6 +2,7 @@
 import { Poppins, Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import Animate from "@/components/animate";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const header = Poppins({
   weight: ["700"],
@@ -17,10 +18,12 @@ const body = Inter({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={twMerge("min-h-screen bg-background", body.className)}>
-        <Animate>{children}</Animate>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={twMerge("min-h-screen bg-background", body.className)}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
