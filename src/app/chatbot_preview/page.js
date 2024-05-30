@@ -1,5 +1,5 @@
 "use client";
-import "../style/globals.css";
+import "../../styles/globals.css";
 import { useState, useRef, useEffect } from "react";
 import SvgLogo from "../../components/chatbotLogo";
 import Image from "next/image";
