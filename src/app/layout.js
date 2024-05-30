@@ -1,23 +1,26 @@
 "use client";
-import "@/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { DM_Sans } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import Animate from "@/components/animate";
 
-const inter = DM_Sans({ subsets: ["latin"] });
+const header = Poppins({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-header",
+});
+
+const body = Inter({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={twMerge("min-h-screen bg-background", inter.className)}
-        >
-          <Animate>{children}</Animate>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={twMerge("min-h-screen bg-background", body.className)}>
+        <Animate>{children}</Animate>
+      </body>
+    </html>
   );
 }

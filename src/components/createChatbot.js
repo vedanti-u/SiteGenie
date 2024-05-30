@@ -4,13 +4,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@/components/ui/button";
 import {
-  DrawerClose,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "./ui/drawer";
-
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 const Create = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -157,27 +155,26 @@ const Create = () => {
 
   return (
     <div className="mx-auto w-full max-w-sm">
-      <DrawerHeader>
-        <DrawerTitle>Create Chatbot</DrawerTitle>
-        <DrawerDescription>
-          To create chatbot ,enter valid URL on any website.
-        </DrawerDescription>
-      </DrawerHeader>
+      <DialogHeader className="bg-white">
+        <DialogTitle>Create Chatbot</DialogTitle>
+        <DialogDescription>
+          To create chatbot, enter a valid URL from any website.
+        </DialogDescription>
+      </DialogHeader>
       <div className="p-2 pb-8">
         <input
           type="url"
           value={inputValue}
           onChange={handleInputChange}
-          className="flex-1 block w-full rounded-none rounded-r-md sm:text-lg border-black px-4 py-2"
+          className="flex-1 block w-full rounded-md sm:text-lg border border-black px-4 py-2"
           placeholder="https://example.com"
         />
       </div>
-      <DrawerFooter>
-        <div className=" bg-gray-50 text-right sm:px-6 gap-4">
+      <DialogFooter>
+        <div className="text-right gap-4">
           {isLoading ? (
-            <button
+            <Button
               disabled
-              type="button"
               className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center"
             >
               <svg
@@ -198,46 +195,35 @@ const Create = () => {
                 />
               </svg>
               Loading...
-            </button>
+            </Button>
           ) : (
-            <div className="px-4 py-2 flex flex-col space-y-6">
+            <div className="px-4 py-2 flex space-x-6">
               <Button
+                variant="primary"
                 onClick={fetchUpdateData}
-                className="bg-black "
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Update
               </Button>
               <Button
+                variant="primary"
                 onClick={fetchDeleteData}
-                className="bg-black "
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
                 Delete
               </Button>
               <Button
+                variant="primary"
                 onClick={fetchData}
-                className="bg-black "
+                className="rounded-md border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
               >
-                Generate ChatBOT
+                Generate Chatbot
               </Button>
             </div>
-            // {showNewButton && (
-            //       <Button
-            //         type="button"
-            //         onClick={() => {
-            //           window.location.href = `/chatbot?url=${inputValue}`;
-            //         }}
-            //         className="inline-flex justify-center m-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-            //       >
-            //         Direct to Chatbot
-            //       </Button>
-            //     )}
           )}
           <ToastContainer />
         </div>
-        <DrawerClose asChild>
-          <Button variant="outline">Go Back</Button>
-        </DrawerClose>
-      </DrawerFooter>
+      </DialogFooter>
     </div>
   );
 };
