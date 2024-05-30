@@ -1,6 +1,6 @@
 <div align="center">
 <a href="">
-    <img alt="comet" src="assets/sitegenie-11.png" height=140 >
+    <img alt="comet" src="assets/sitegenie-11.png" height=160 >
 </a>
 </div>
 </br>
@@ -292,7 +292,7 @@ _your branch will be merged on code review_
 </table>
 
 -------
-https://github.com/vedanti-u/SiteGenie
+
 ### :octocat: Statistics
 
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
