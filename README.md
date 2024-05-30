@@ -1,6 +1,6 @@
 <div align="center">
 <a href="">
-    <img alt="comet" src="assets/sitegenie-10.png" height=140 width=550>
+    <img alt="comet" src="assets/sitegenie-11.png" height=140 >
 </a>
 </div>
 </br>
