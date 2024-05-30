@@ -1,6 +1,6 @@
 <div align="center">
 <a href="">
-    <img alt="comet" src="assets/sitegenie-7.png" height=160 width=550>
+    <img alt="comet" src="assets/sitegenie-10.png" height=140 width=550>
 </a>
 </div>
 </br>
@@ -275,22 +275,24 @@ _your branch will be merged on code review_
   <tr>
     <td align="center">
       <a href="#">
-          <b>Vedanti Udapure</b>
+          Vedanti Udapure
       </a>
     </td>
     <td align="center">
       <a href="#">
-          <b>Vedant Bhalerao</b>
+          Vedant Bhalerao
       </a>
     </td>
     <td align="center">
       <a href="#">
-          <b>Vojas Gonnade</b>
+          Vojas Gonnade
       </a>
     </td>
   </tr>
 </table>
 
+-------
+https://github.com/vedanti-u/SiteGenie
 ### :octocat: Statistics
 
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
