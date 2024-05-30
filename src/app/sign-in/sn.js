@@ -3,11 +3,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import React from "react";
-// Retrieve the SUPABASE_URL and SUPABASE_ANON_KEY from the environment variables
-// const SUPABASE_URL = process.env.SUPABASE_URL;
-// const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
-// Create a Supabase client instance
 const supabase = createClient(
   "https://jphemcuwfpxnynveilja.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaGVtY3V3ZnB4bnludmVpbGphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk5NTMxMTUsImV4cCI6MjAxNTUyOTExNX0.y8HPHiQHoXP0iIWnrgxptJ1X4uvw-ycRmiFNHnndSUM"
@@ -51,15 +47,15 @@ const Login = () => {
           appearance={{
             style: {
               button: {
-                background: "purple",
+                background: "blue",
                 color: "white",
                 fontSize: "1rem", // Increase font size
                 padding: "0.75rem 1.5rem",
                 borderRadius: "0.5rem", // Curved corners
                 boxShadow:
-                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
+                  "0 4px 4px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
               },
-              anchor: { color: "black" },
+              anchor: { color: "blue" },
               label: {
                 fontSize: "1.2rem", // Increase font size
               },
@@ -68,7 +64,7 @@ const Login = () => {
                 color: "grey", // Light font color
                 borderRadius: "0.5rem", // Curved corners
                 boxShadow:
-                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
+                  "0 4px 4px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Shadow
                 borderColor: "#D1D5DB", // Light border color
                 padding: "0.5rem 1rem", // Adjust padding for reduced height
               },
