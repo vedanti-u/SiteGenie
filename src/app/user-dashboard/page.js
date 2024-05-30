@@ -50,6 +50,7 @@ export default function Home() {
                   <DialogTrigger asChild>
                     <div className="flex items-center px-4 space-x-6">
                       <span className="text-lg">
+
                         Create new Chatbot
                       </span>
                       <button

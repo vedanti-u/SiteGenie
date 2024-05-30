@@ -66,6 +66,7 @@ const InternalNavbar = () => {
         >
           <span className="self-center text-black text-4xl whitespace-nowrap">
             Site<span className="text-indigo-600">Genie.ai</span>
+
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ml-auto">

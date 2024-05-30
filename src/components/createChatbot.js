@@ -158,9 +158,6 @@ const Create = () => {
     <div className="mx-auto w-full max-w-sm">
       <DialogHeader className="bg-white">
         <DialogTitle>Create Chatbot</DialogTitle>
-        <DialogDescription>
-          To create chatbot, enter a valid URL from any website.
-        </DialogDescription>
       </DialogHeader>
       <div className="p-2 pb-8">
         <input
