@@ -2,57 +2,36 @@ import { GithubIcon, TwitterIcon } from "lucide-react";
 const FooterSection = () => {
   return (
     <>
-      <footer class="w-full py-4">
+      <footer class="w-full py-8 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="max-w-3xl mx-auto">
-            <a href="/" class="flex justify-center ">
-              <span className="self-center text-black text-5xl s whitespace-nowrap">
-                Site<span className="text-indigo-600">Genie.ai</span>
-              </span>{" "}
+          <div class="max-w-3xl mx-auto text-center">
+            <a href="/" class="flex justify-center mb-8">
+              <span class="self-center text-black text-5xl whitespace-nowrap">
+                Site<span class="text-indigo-600">Genie.ai</span>
+              </span>
             </a>
-            {/* <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
-              <li>
-                <a href="#" class=" text-black hover:text-gray-900">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#" class=" text-black hover:text-gray-900">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" class=" text-black hover:text-gray-900">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#" class=" text-black hover:text-gray-900">
-                  Video Demo
-                </a>
-              </li>
-            </ul> */}
-            <div class="flex space-x-10 justify-center items-center mb-14 pt-10">
+
+            <div class="flex justify-center items-center space-x-6 mb-8">
               <a
                 href="https://github.com/vedanti-u/site-frontend"
-                class="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 "
+                class="text-gray-900 transition-all duration-500 hover:text-indigo-600"
               >
-                <GithubIcon width="64px" height="64px" />
+                <GithubIcon width="40px" height="40px" />
               </a>
               <a
                 href="https://x.com/vedbhalerao444"
-                class="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 "
+                class="text-gray-900 transition-all duration-500 hover:text-indigo-600"
               >
-                <TwitterIcon width="64px" height="64px" />
+                <TwitterIcon width="40px" height="40px" />
               </a>
               <a
                 href="#"
-                class="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 "
+                class="text-gray-900 transition-all duration-500 hover:text-indigo-600"
               >
                 <svg
-                  width="65px"
-                  height="65px"
-                  className="hover:text-indigo-600"
+                  width="40px"
+                  height="40px"
+                  class="hover:text-indigo-600"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +55,9 @@ const FooterSection = () => {
                 </svg>
               </a>
             </div>
-            <span class="text-lg text-gray-500 text-center block">
-              ©<a href="/">SiteGenie.ai</a> 2024, All rights reserved.
+
+            <span class="text-lg text-gray-500">
+              © <a href="/">SiteGenie.ai</a> 2024, All rights reserved.
             </span>
           </div>
         </div>
