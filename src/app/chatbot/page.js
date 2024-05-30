@@ -73,6 +73,16 @@ const Chatbot = () => {
       setIsLoading(false); // Set loading state back to false after receiving the result
     }
   };
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <>
@@ -100,7 +110,7 @@ const Chatbot = () => {
             <div className="block mt-4 md:mt-6 pb-[7px] clear-both">
               <div className="pt-6">
                 <div className="flex items-center space-x-2">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                  <div className="flex items-center justify-center w-12 h-12 bg-purple-700 rounded-full">
                     <svg
                       width="64px"
                       height="64px"
@@ -125,10 +135,11 @@ const Chatbot = () => {
                       </g>
                     </svg>{" "}
                   </div>
-                  <span className="bg-slate-700 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                  <span className="bg-gray-500 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
                     Hello, how can I assist you today?
                   </span>
                 </div>
+                {/* <span>{time}</span> */}
               </div>
               {chatLog.map((message, index) => (
                 <div
@@ -147,7 +158,7 @@ const Chatbot = () => {
                     {message.message}
                   </div>
 
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                  <div className="flex items-center justify-center w-12 h-12 bg-black rounded-full">
                     <User2Icon className="text-white" />
                   </div>
                 </div>

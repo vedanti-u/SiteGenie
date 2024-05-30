@@ -40,7 +40,7 @@ const Navbar = () => {
             <a href="/sign-in"> Login</a>
           </button>
           <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-700">
-            <a href="/sign-in"> Sign Up</a>
+            <a href="/sign-up"> Sign Up</a>
           </button>
           <button
             data-collapse-toggle="navbar-sticky"
@@ -66,27 +66,6 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          {/* </div>
-        <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 text-lg border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className={`block py-2 px-3 rounded md:p-0 ${
-                    item.active
-                      ? "text-indigo-500 md:bg-transparent md:text-blue-700 md:dark:text-blue-500 hover:bg-indigo-500 hover:text-indigo-500"
-                      : "text-slate-900 hover:text-indigo-500 md:hover:text-indigo-500 hover:bg-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-indigo-500 md:dark:hover:text-indigo-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul> */}
         </div>
       </div>
     </nav>

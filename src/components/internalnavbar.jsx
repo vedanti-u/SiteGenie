@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import { LogOutIcon } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-
+import { UserButton } from "@clerk/nextjs";
 const InternalNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  // const { userId } = auth();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -60,43 +60,18 @@ const InternalNavbar = () => {
       }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="/user-dashbaord"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <span className="self-center text-black text-4xl whitespace-nowrap">
             Site<span className="text-indigo-600">Genie.ai</span>
 
           </span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div
-            className="hidden sm:ml-6 sm:flex sm:items-center relative"
-            ref={dropdownRef}
-          >
-            <div
-              className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden cursor-pointer"
-              onClick={toggleDropdown}
-            >
-              <Image
-                src="/path_to_user_profile_image.jpg"
-                alt="User Profile"
-                className="w-full h-full object-cover"
-                width={12}
-                height={12}
-              />
-            </div>
-
-            {isOpen && (
-              <div className="absolute right-0 mt-20 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                <button
-                  onClick={signOut}
-                  className="flex justify-between items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                >
-                  <span>Sign Out</span>
-
-                  <LogOutIcon />
-                </button>
-              </div>
-            )}
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ml-auto">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+            <UserButton afterSignOutUrl="/" />
           </div>
         </div>
       </div>
