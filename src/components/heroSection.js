@@ -1,22 +1,20 @@
-//import SvgLogo from "./chatbotLogo";
-"use client";
 import "@/styles/globals.css";
 import Navbar from "./navbar";
 
 const HeroSection = () => {
   return (
     <>
-      <div class="relative">
-        <div class="relative">
+      <div className="relative">
+        <div className="relative">
           <Navbar />
           <div
-            className="relative bg-cover bg-center p-0"
+            className="relative bg-cover bg-center p-0 transition-all duration-500 delay-200"
             // style={{ backgroundImage: `url(${BgImage.src})` }}
           >
             <main className="relative mx-auto max-w-12xl px-4 ">
               <div className="text-center space-y-2 pt-24">
-                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white hover:bg-indigo-50 bg-transparent">
-                  <span className=" text-xs font-medium text-gray-900 ml-3">
+                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white hover:bg-indigo-50 bg-transparent transition-all duration-300 delay-300">
+                  <span className="text-xs font-medium text-gray-900 ml-3">
                     Introducing SiteGenie
                   </span>
                   <a
@@ -40,15 +38,15 @@ const HeroSection = () => {
                     </svg>
                   </a>
                 </div>
-                <div className="text-5xl py-8 pb-4 text-gray-900 bg-white inline-block bg-transparent">
-                  <span className="block xl:inline">
+                <div className="text-5xl py-8 pb-4 text-gray-900 bg-white inline-block bg-transparent transition-all duration-500 delay-500">
+                  <div className="block xl:inline">
                     Enhance website experience{" "}
-                  </span>
-                  <span className="block text-indigo-600 xl:inline">
+                  </div>
+                  <div className="block text-indigo-600 xl:inline">
                     with our efficient chatbot.
-                  </span>
+                  </div>
                 </div>
-                <p className="max-w-md mx-auto py-1 text-gray-700 text-lg md:max-w-3xl bg-white bg-opacity-0">
+                <p className="max-w-md mx-auto py-1 text-gray-700 text-lg md:max-w-3xl bg-white bg-opacity-0 transition-all duration-500 delay-700">
                   Transform your website experience with our tailored chatbot.
                   Expertly trained for efficiency, it saves you time and
                   delivers unmatched interaction.
@@ -56,7 +54,7 @@ const HeroSection = () => {
                 <div className="flex items-center justify-center py-4">
                   <a
                     href="/sign-in"
-                    className="w-full md:w-auto mb-14 inline-flex items-center justify-center py-3 px-7 text-base font-semibold text-center text-white rounded-full bg-indigo-600 shadow-xs hover:bg-indigo-700 transition-all duration-500"
+                    className="w-full md:w-auto mb-14 inline-flex items-center justify-center py-3 px-7 text-base font-semibold text-center text-white rounded-full bg-indigo-600 shadow-xs hover:bg-indigo-700 transition-all duration-500 delay-900"
                   >
                     Get started
                     <svg
@@ -87,21 +85,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-{
-  /* <svg
-xmlns="http://www.w3.org/2000/svg"
-width="25"
-height="25"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2.75"
-stroke-linecap="round"
-stroke-linejoin="round"
-className="lucide lucide-arrow-right"
->
-<path d="M5 12h14" />
-<path d="m12 5 7 7-7 7" />
-</svg> */
-}

@@ -39,48 +39,45 @@ export default function Home() {
       <InternalNavbar />
       <main>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          {/* Replace with your content */}
+          {" "}
           <div className="px-4 py-28 sm:px-0">
-            <span className="text-black text-5xl">Dashboard</span>
+            <div className="text-5xl">Dashboard</div>
             <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 mt-8">
-              {" "}
-              {/* Added mt-8 */}
-              <div className="m-8 relative p-2 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-80 b text-indigo-700 hover:shadow-lg">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="flex items-center px-4 space-x-6">
-                      <span className="text-lg">
-
-                        Create new Chatbot
-                      </span>
-                      <button
-                        type="button"
-                        className="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        <svg
-                          className="h-6 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
+              <div className="flex justify-center items-center ">
+                <div className="m-8 justify-center relative py-2 px-3 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-[350px] text-indigo-700 hover:shadow-lg">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="flex items-center space-x-6">
+                        <span className="text-lg">Create new chatbot</span>
+                        <button
+                          type="button"
+                          className="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </DialogTrigger>
-
-                  <DialogContent className="sm:max-w-md">
-                    <Create />
-                  </DialogContent>
-                </Dialog>
+                          <svg
+                            className="h-6 w-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <Create />
+                    </DialogContent>
+                  </Dialog>
+                </div>
               </div>
+
               <div className="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">
                 <div className="mt-0 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
                   {create.tiers.map((tier) => (
@@ -114,11 +111,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-           
           </div>
         </div>
       </main>
-       <FooterSection />
+      <FooterSection />{" "}
     </>
   );
 }
