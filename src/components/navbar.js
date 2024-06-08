@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import SiteGenieLogo from "./sitegenie-logo";
 
@@ -24,25 +25,41 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <nav
       className={`bg-white bg-opacity-50 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-200 ${
         isScrolled ? "backdrop-blur-md" : ""
       }`}
     >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        {" "}
+        {/* Reduced padding */}
         <a href="/" className="flex items-center space-x-3">
           <span className="self-center text-black text-4xl">
             {/* Site<span className="text-indigo-600">Genie</span> */}
-
-            <SiteGenieLogo />
+            <div className="relative w-44 h-16">
+              {" "}
+              {/* Adjusted width and height */}
+              <Image
+                src="/sitegenie-logo.png"
+                alt="Description of the image"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+            {/* <SiteGenieLogo /> */}
           </span>
         </a>
         <div className="flex items-center space-x-3 md:space-x-3 rtl:space-x-reverse md:order-2">
-          <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100">
+          <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-100">
+            {" "}
+            {/* Reduced padding */}
             <a href="/sign-in"> Login</a>
           </button>
-          <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-700">
+          <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-700">
+            {" "}
+            {/* Reduced padding */}
             <a href="/sign-up"> Sign Up</a>
           </button>
           <button
