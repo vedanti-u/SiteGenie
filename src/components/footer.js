@@ -1,4 +1,5 @@
 import { GithubIcon, TwitterIcon } from "lucide-react";
+import SiteGenieLogo from "./sitegenie-logo";
 const FooterSection = () => {
   return (
     <>
@@ -7,7 +8,7 @@ const FooterSection = () => {
           <div class="max-w-3xl mx-auto text-center">
             <a href="/" class="flex justify-center mb-8">
               <span class="self-center text-black text-5xl whitespace-nowrap">
-                Site<span class="text-indigo-600">Genie.ai</span>
+                <SiteGenieLogo />{" "}
               </span>
             </a>
 
@@ -25,31 +26,31 @@ const FooterSection = () => {
                 <TwitterIcon width="40px" height="40px" />
               </a>
               <a
-                href="#"
-                class="text-gray-900 transition-all duration-500 hover:text-indigo-600"
+                href="https://www.notion.so/90d2c6cd3b544d35aeda0c8ab2bc3700"
+                className="text-gray-900 transition-all duration-500 hover:text-indigo-600"
               >
                 <svg
                   width="40px"
                   height="40px"
-                  class="hover:text-indigo-600"
+                  className="hover:stroke-indigo-600"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  stroke="#000000"
-                  stroke-width="1.56"
+                  stroke="currentColor"
+                  strokeWidth="1.56"
                 >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                   <g
                     id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></g>
                   <g id="SVGRepo_iconCarrier">
                     <path
                       d="M16.12 9.69027V17.6947L15.18 17.7942L10.64 9.9292L9.8 10.0088V21L20 20.2832V6.06562L15.34 3L3 4.09687V17.1372L6.32 21V7.10625L16.12 6.31832"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                   </g>
                 </svg>
