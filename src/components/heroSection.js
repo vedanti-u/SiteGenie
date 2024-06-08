@@ -12,8 +12,8 @@ const HeroSection = () => {
             // style={{ backgroundImage: `url(${BgImage.src})` }}
           >
             <main className="relative mx-auto max-w-12xl px-4 ">
-              <div className="text-center space-y-2 pt-24">
-                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between mb-4 bg-white hover:bg-indigo-50 bg-transparent transition-all duration-300 delay-300">
+              <div className="text-center space-y-2 pt-20">
+                <div className="border border-indigo-600 p-1 w-48 mx-auto rounded-full flex items-center justify-between  bg-white hover:bg-indigo-50 bg-transparent transition-all duration-300 delay-300">
                   <span className="text-xs font-medium text-gray-900 ml-3">
                     Introducing SiteGenie
                   </span>
@@ -21,6 +21,14 @@ const HeroSection = () => {
                     href="/sign-in"
                     className="w-8 h-8 rounded-full flex justify-center items-center bg-indigo-600"
                   >
+                    {/* <Image
+                      src="/sitegenie-2.png"
+                      alt="Description of the image"
+                      layout="responsive"
+                      width={120}
+                      height={60}
+                      objectFit="contain"
+                    /> */}
                     <svg
                       width="17"
                       height="16"
@@ -38,20 +46,20 @@ const HeroSection = () => {
                     </svg>
                   </a>
                 </div>
-                <div className="text-5xl py-8 pb-4 text-gray-900 bg-white inline-block bg-transparent transition-all duration-500 delay-500">
-                  <div className="block xl:inline">
+                <div className="text-6xl py-10 pb-8 text-gray-900 bg-white inline-block bg-transparent transition-all duration-500 delay-500">
+                  <div className="block xl:inline leading-6">
                     Enhance website experience{" "}
                   </div>
-                  <div className="block text-indigo-600 xl:inline">
+                  <div className="block text-indigo-600 xl:inline leading-6">
                     with our efficient chatbot.
                   </div>
                 </div>
-                <p className="max-w-md mx-auto py-1 text-gray-700 text-lg md:max-w-3xl bg-white bg-opacity-0 transition-all duration-500 delay-700">
+                <p className="max-w-md mx-auto py-1 text-gray-700 text-2xl md:max-w-5xl bg-white bg-opacity-0 transition-all duration-500 delay-700">
                   Transform your website experience with our tailored chatbot.
                   Expertly trained for efficiency, it saves you time and
                   delivers unmatched interaction.
                 </p>
-                <div className="flex items-center justify-center py-4">
+                <div className="flex items-center justify-center py-8">
                   <a
                     href="/sign-in"
                     className="w-full md:w-auto mb-14 inline-flex items-center justify-center py-3 px-7 text-base font-semibold text-center text-white rounded-full bg-indigo-600 shadow-xs hover:bg-indigo-700 transition-all duration-500 delay-900"

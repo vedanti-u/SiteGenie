@@ -39,15 +39,14 @@ export default function Home() {
       <InternalNavbar />
       <main>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          {" "}
-          <div className="px-4 py-28 sm:px-0">
-            <div className="text-5xl">Dashboard</div>
-            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 mt-8">
-              <div className="flex justify-center items-center ">
-                <div className="m-8 justify-center relative py-2 px-3 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-[350px] text-indigo-700 hover:shadow-lg">
+          <div className="px-4 py-24 sm:px-0 pb-12">
+            <div className="text-4xl">Dashboard</div>
+            <div className="border-4 border-dashed border-gray-200 rounded-lg mt-8 pb-8">
+              <div className="flex justify-center items-center">
+                <div className="m-8 relative py-2 px-3 bg-white border border-gray-200 rounded-2xl shadow-md flex flex-row items-center w-[350px] text-indigo-700 hover:shadow-lg">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <div className="flex items-center space-x-6">
+                      <div className="flex justify-between items-center w-full">
                         <span className="text-lg">Create new chatbot</span>
                         <button
                           type="button"
@@ -71,11 +70,19 @@ export default function Home() {
                         </button>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-md">
+                    <DialogContent className="max-w-xl">
                       <Create />
                     </DialogContent>
                   </Dialog>
                 </div>
+              </div>
+
+              {/* Dashed Border */}
+              <div className="border-t-4 border-dashed border-gray-200 mx-4"></div>
+
+              {/* Text Below Dashed Border */}
+              <div className="text-center text-3xl text-gray-700 mt-4 py-6">
+                Already created chatbots
               </div>
 
               <div className="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">
@@ -90,7 +97,7 @@ export default function Home() {
                           {tier.title}
                         </h3>
                         <p className="mt-4 flex items-baseline text-gray-900">
-                          <span className="text-4xl  tracking-tight">
+                          <span className="text-4xl tracking-tight">
                             {tier.price}
                           </span>
                         </p>
@@ -114,7 +121,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <FooterSection />{" "}
+      <FooterSection />
     </>
   );
 }

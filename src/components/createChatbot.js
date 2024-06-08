@@ -155,14 +155,14 @@ const Create = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-sm ">
+    <div className="mx-auto w-full max-w-lg border-4 border-dashed border-gray-200 p-8 rounded-lg">
       <DialogHeader className="bg-white">
         <DialogTitle>Create Chatbot</DialogTitle>
       </DialogHeader>
       <span className="text-gray-500">
         Enter your website's URL to get your chatbot
       </span>
-      <div className="p-2 pt-4 pb-8">
+      <div className=" pt-4 pb-8">
         <input
           type="url"
           value={inputValue}
@@ -172,7 +172,7 @@ const Create = () => {
         />
       </div>
       <DialogFooter>
-        <div className="text-right gap-4">
+        <div className="text-right gap-2">
           {isLoading ? (
             <Button
               disabled
@@ -198,27 +198,27 @@ const Create = () => {
               Loading...
             </Button>
           ) : (
-            <div className="px-4 py-2 flex space-x-6">
+            <div className="flex justify-center space-x-2">
               <Button
                 variant="primary"
                 onClick={fetchUpdateData}
-                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
               >
                 Update
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchDeleteData}
-                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
               >
                 Delete
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchData}
-                className="rounded-full border bg-indigo-600 text-white px-4 py-2 shadow-md hover:bg-indigo-700"
+                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
               >
-                Generate Chatbot
+                Generate
               </Button>
             </div>
           )}
