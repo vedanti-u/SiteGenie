@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
+import SiteGenieLogo from "./sitegenie-logo";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,9 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3">
           <span className="self-center text-black text-4xl">
-            Site<span className="text-indigo-600">Genie</span>
+            {/* Site<span className="text-indigo-600">Genie</span> */}
+
+            <SiteGenieLogo />
           </span>
         </a>
         <div className="flex items-center space-x-3 md:space-x-3 rtl:space-x-reverse md:order-2">
