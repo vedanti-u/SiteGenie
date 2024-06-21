@@ -50,7 +50,7 @@ const Chatbot = () => {
 
     try {
       const response = await fetch(
-        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbotprompt",
+        "http://localhost:3001/chatbotprompt",
         requestOptions
       );
 
@@ -87,16 +87,13 @@ const Chatbot = () => {
     <>
       <main className="flex items-center justify-center h-screen bg-gray-100">
         <section className="flex flex-col w-full h-full">
-          <nav className="chatbot-header bg-indigo-600 text-white py-2 fixed top-0 w-full z-50">
+          <nav className="chatbot-header bg-gradient-to-r from-violet-800 to-violet-600  text-white py-1 fixed top-0 w-full z-50">
             <div className="flex items-center justify-between px-4">
               <Button
                 variant="primary"
-                className="flex items-center bg-indigo-600 text-white hover:bg-indigo-600"
+                className="flex items-centerbg-gradient-to-r from-violet-800 to-violet-600  text-white hover:bg-violet-600"
               >
-                <a
-                  href="/chatbot_preview"
-                  className="flex items-center space-x-2"
-                >
+                <a href="/preview" className="flex items-center space-x-2">
                   <ArrowLeft className="text-bold" />
                   <div className="flex items-center">
                     <span className="text-xl  ml-4">Your </span>
@@ -125,8 +122,8 @@ const Chatbot = () => {
               </Button>
             </div>
           </nav>
-          <div className="flex-1 overflow-y-auto h-full pt-14 pb-16 px-6">
-            <div className="block mt-4 pb-[7px] clear-both">
+          <div className="flex-1 overflow-y-auto h-full py-14 pb-16 px-6">
+            <div className="block mt-4 mb-8 clear-both">
               <div className="pt-6">
                 <div className="flex items-center space-x-2">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 p-1 border-gray-500">
@@ -139,7 +136,7 @@ const Chatbot = () => {
                       objectFit="contain"
                     />
                   </div>
-                  <span className="bg-indigo-500 text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                  <span className="bg-gradient-to-r from-violet-600 to-violet-400  text-white rounded-2xl p-3 max-w-sm">
                     Hello, how can I assist you today?
                   </span>
                 </div>
@@ -151,21 +148,28 @@ const Chatbot = () => {
                     message.type === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
-                  <div
-                    className={`${
-                      message.type === "user"
-                        ? "bg-gray-500 text-white"
-                        : "bg-indigo-800 text-white"
-                    } rounded-t-full rounded-b-full p-3 max-w-sm text-justify break-words`}
-                  >
-                    {message.message}
-                  </div>
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full  border-2  border-gray-300">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full border-2 p-1 border-gray-500">
                     {message.type === "user" ? (
                       <User2Icon className="text-black" />
                     ) : (
-                      <BotIcon className="text-white" />
+                      <Image
+                        src="/sitegenie-small.png"
+                        alt="Description of the image"
+                        layout="responsive"
+                        width={12}
+                        height={12}
+                        objectFit="contain"
+                      />
                     )}
+                  </div>
+                  <div
+                    className={`${
+                      message.type === "user"
+                        ? "bg-gradient-to-l from-gray-600 to-gray-400 text-white"
+                        : "bg-gradient-to-r from-violet-600 to-violet-400 text-white "
+                    } rounded-2xl p-3 max-w-2xl text-justify break-words`}
+                  >
+                    {message.message}
                   </div>
                 </div>
               ))}
@@ -177,12 +181,12 @@ const Chatbot = () => {
                         src="/sitegenie-small.png"
                         alt="Description of the image"
                         layout="responsive"
-                        width={16}
-                        height={8}
+                        width={12}
+                        height={12}
                         objectFit="contain"
                       />
                     </div>
-                    <span className="bg-white text-white rounded-t-full rounded-b-full p-3 max-w-sm">
+                    <span className="bg-white text-white rounded-t-full rounded-b-full p-1 max-w-sm">
                       <Loadingsvg />
                     </span>
                   </div>
@@ -199,7 +203,7 @@ const Chatbot = () => {
                 <input
                   type="text"
                   placeholder="Please type here....."
-                  className="px-4 flex-1 py-2 border border-gray-300 rounded-lg focus:border-indigo-500 focus:outline-none"
+                  className="px-4 flex-1 py-2 border border-gray-300 rounded-lg focus:border-violet-500 focus:outline-none"
                   id="inputField"
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
@@ -207,17 +211,17 @@ const Chatbot = () => {
                 <button
                   type="submit"
                   id="submitButton"
-                  className="ml-2 bg-indigo-600 text-white p-2 rounded-full"
+                  className="ml-2 bg-violet-600 text-white p-2 rounded-full"
                 >
                   <SendHorizontalIcon />
                 </button>
               </form>
             </div>
-            <div className="chatbot-header bg-indigo-600 text-white py-2">
+            <div className="chatbot-header bg-gradient-to-t from-violet-800 to-violet-600  text-white ">
               <div className="flex items-center justify-center">
                 <Button
                   variant="primary"
-                  className="bg-indigo-600 text-white hover:bg-indigo-600"
+                  className="bg-gradient-to-t from-violet-800 to-violet-600  text-white hover:bg-violet-600"
                 >
                   Powered by ©
                   <a href="/" className="font-semibold ml-1">

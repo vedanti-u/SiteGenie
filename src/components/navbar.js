@@ -52,12 +52,12 @@ const Navbar = () => {
           </span>
         </a>
         <div className="flex items-center space-x-3 md:space-x-3 rtl:space-x-reverse md:order-2">
-          <button className="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-100">
+          <button className="bg-indigo-50 text-violet-800 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-100">
             {" "}
             {/* Reduced padding */}
             <a href="/sign-in"> Login</a>
           </button>
-          <button className="bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-700">
+          <button className=" bg-gradient-to-r from-violet-800 to-violet-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-2 px-4 text-sm hover:bg-indigo-700">
             {" "}
             {/* Reduced padding */}
             <a href="/sign-up"> Sign Up</a>

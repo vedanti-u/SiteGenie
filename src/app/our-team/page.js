@@ -8,7 +8,7 @@ const ourTeam = () => {
               <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Team
                 <br />
-                SiteGenie.ai
+                SiteGenie
               </h2>
               <p class="text-xl text-gray-700">
                 Project Based Learning

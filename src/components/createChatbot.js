@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +15,7 @@ const Create = () => {
   const [inputValue, setInputValue] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
-  const [showNewButton, setShowNewButton] = useState(false);
+  const [showRedirectButton, setShowRedirectButton] = useState(false);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -44,13 +45,13 @@ const Create = () => {
 
     try {
       const response = await fetch(
-        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbot",
+        "http://localhost:3001/chatbot",
         requestOptions
       );
 
       if (response.ok) {
         toast.success("Data added successfully");
-        setShowNewButton(true);
+        setShowRedirectButton(true);
       } else {
         const errorData = await response.json();
         toast.error(
@@ -89,7 +90,7 @@ const Create = () => {
 
     try {
       const response = await fetch(
-        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbot",
+        "http://localhost:3001/chatbot",
         requestOptions
       );
 
@@ -135,7 +136,7 @@ const Create = () => {
 
     try {
       const response = await fetch(
-        "https://us8c1blf22.execute-api.ap-south-1.amazonaws.com/stg/chatbot",
+        "http://localhost:3001/chatbot",
         requestOptions
       );
 
@@ -160,9 +161,9 @@ const Create = () => {
         <DialogTitle>Create Chatbot</DialogTitle>
       </DialogHeader>
       <span className="text-gray-500">
-        Enter your website's URL to get your chatbot
+        Enter your website&apos;s URL to get your chatbot
       </span>
-      <div className=" pt-4 pb-8">
+      <div className="pt-4 pb-8">
         <input
           type="url"
           value={inputValue}
@@ -202,24 +203,35 @@ const Create = () => {
               <Button
                 variant="primary"
                 onClick={fetchUpdateData}
-                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
+                className="w-36 h-12 rounded-full border bg-gradient-to-r from-violet-800 to-violet-600 text-white shadow-md hover:bg-violet-400 flex items-center justify-center"
               >
                 Update
               </Button>
               <Button
                 variant="primary"
                 onClick={fetchDeleteData}
-                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
+                className="w-36 h-12 rounded-full border bg-gradient-to-r from-violet-800 to-violet-600 text-white shadow-md hover:bg-violet-400 flex items-center justify-center"
               >
                 Delete
               </Button>
-              <Button
-                variant="primary"
-                onClick={fetchData}
-                className="w-36 h-12 rounded-full border bg-indigo-600 text-white shadow-md hover:bg-indigo-700 flex items-center justify-center"
-              >
-                Generate
-              </Button>
+              {showRedirectButton ? (
+                <Link href="/chatbot">
+                  <Button
+                    variant="primary"
+                    className="w-36 h-12 rounded-full border bg-gradient-to-r from-violet-800 to-violet-600 text-white shadow-md hover:bg-violet-400 flex items-center justify-center"
+                  >
+                    Redirect
+                  </Button>{" "}
+                </Link>
+              ) : (
+                <Button
+                  variant="primary"
+                  onClick={fetchData}
+                  className="w-36 h-12 rounded-full border bg-gradient-to-r from-violet-800 to-violet-600 text-white shadow-md hover:bg-violet-400 flex items-center justify-center"
+                >
+                  Generate
+                </Button>
+              )}
             </div>
           )}
           <ToastContainer />
