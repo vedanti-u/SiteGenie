@@ -5,7 +5,8 @@ import Image from "next/image";
 import "../../../styles/globals.css";
 import { ArrowRight } from "lucide-react";
 import WhiteLogo from "@/components/white-logo";
-const page = () => {
+
+const Page = () => {
   return (
     <>
       <div className="container relative hidden h-[750px] items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
@@ -17,7 +18,7 @@ const page = () => {
             </div>
             <div>
               <div className="flex items-center text-lg pl-10">
-                Welcome techie !
+                Welcome techie!
               </div>
               <div className="flex items-center text-lg pl-10">
                 Avail our service by signing up
@@ -30,11 +31,11 @@ const page = () => {
               <p className="text-lg pl-10 italic">
                 &ldquo;Some people call this artificial intelligence, but the
                 reality is this technology will enhance us. So instead of
-                artificial intelligence, I think we'll augment our
+                artificial intelligence, I think we&apos;ll augment our
                 intelligence.&rdquo;
               </p>
               <footer className="text-sm pl-10">
-                – Ginni Rometty, Former CEO of IBM
+                &ndash; Ginni Rometty, Former CEO of IBM
               </footer>
             </blockquote>
           </div>
@@ -49,4 +50,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

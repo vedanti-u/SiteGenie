@@ -5,7 +5,7 @@ const CTA = () => {
     <>
       <section class="py-10">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="lg:py-14 lg:px-20 p-10 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 flex items-center justify-between flex-col lg:flex-row">
+          <div class="lg:py-14 lg:px-20 p-10 rounded-2xl bg-gradient-to-r from-violet-800 to-violet-600 flex items-center justify-between flex-col lg:flex-row">
             <div class="block text-center mb-5 lg:text-left lg:mb-0">
               <h2 class="text-5xl text-white mb-5 lg:mb-2">Connect with us</h2>
               <p class="text-lg text-indigo-100">

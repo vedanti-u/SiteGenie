@@ -8,6 +8,13 @@ const nextConfig = {
       "cloudflare-ipfs.com",
       "randomuser.me",
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+        pathname: "**",
+      },
+    ],
   },
 };
 

@@ -69,7 +69,7 @@ const FooterSection = () => {
             </div>
 
             <span class="text-lg text-gray-500">
-              © <a href="/">SiteGenie.ai</a> 2024, All rights reserved.
+              © <a href="/">SiteGeniei</a> 2023 - Future, All rights reserved.
             </span>
           </div>
         </div>
