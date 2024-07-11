@@ -45,9 +45,9 @@ _SiteGenie aims to deliver an intuitive and effective solution for crafting, per
 
 <h1><img src="assets/sitegenie-small.png" alt="Comet Logo" width="35" height="35"> Try SiteGenie</h1>
 
-`Link to install`
+<!--`Link to install`
 Screenshot of landing page
-
+-->
 ## 💡 How SiteGenie works ?
 
 ```mermaid
