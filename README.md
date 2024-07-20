@@ -270,7 +270,7 @@ _your branch will be merged on code review_
 
 </br>
 
-<h3 id="colab">:people: Collaborators</h3>
+<h3 id="colab"> :full_moon_with_face: Collaborators</h3>
 
 <table>
   <tr>
