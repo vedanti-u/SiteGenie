@@ -106,6 +106,7 @@ sequenceDiagram
 
 >This sequence diagram depicts the interaction flow within a system handling website data processing and AI-driven response generation. Initially, the system scrapes data recursively from the requested URL, cleans it, and generates vector embeddings using OpenAI. These embeddings are stored in Supabase. Upon receiving prompts from users, the system leverages these stored embeddings to generate contextually relevant responses via OpenAI. Deployment on AWS Lambda allows for scalable serverless execution, with staging and production environments ensuring smooth integration through automated testing and GitHub Actions, maintaining code quality and security with stringent repository management practices like branch protection and code reviews for merges.
 
+### Backend Repository - https://github.com/vedanti-u/SiteGenie-Backend
 <!-- GETTING STARTED -->
 ## Contributing
 
