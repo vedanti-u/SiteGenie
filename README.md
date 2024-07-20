@@ -25,11 +25,15 @@
 
 </div>
 
-
-https://github.com/user-attachments/assets/32d4cd6d-bdae-4bbd-a24f-f74e80d8c0b1
-
-
 </div align="left" >
+
+https://github.com/user-attachments/assets/c204dadd-e987-4574-ae91-5e45768282d4
+
+
+
+
+
+
 
 ## About SiteGenie
 
